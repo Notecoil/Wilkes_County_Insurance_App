@@ -211,7 +211,6 @@ namespace Wilkes_County_Insurance_App
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
                 cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES ('{receivedFromFirstName}', '{receivedFromLastName}', '{receiptDate}', '{receiptTime}', '{remit_to}', '{reference}', '{transactionDescription}', '{paymentMethod}', {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";
                 cmd.ExecuteNonQuery();
-                //this is a test
             }
             catch (Exception ex)
             {
