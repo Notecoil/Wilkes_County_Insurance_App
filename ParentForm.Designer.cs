@@ -32,6 +32,7 @@
             optionsButton = new Button();
             homeButton = new Button();
             printReceiptButton = new Button();
+            cashDrawerButton = new Button();
             SuspendLayout();
             // 
             // panel1
@@ -77,11 +78,23 @@
             printReceiptButton.UseVisualStyleBackColor = true;
             printReceiptButton.Click += printReceiptButton_Click;
             // 
+            // cashDrawerButton
+            // 
+            cashDrawerButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cashDrawerButton.Location = new Point(1110, 174);
+            cashDrawerButton.Name = "cashDrawerButton";
+            cashDrawerButton.Size = new Size(62, 48);
+            cashDrawerButton.TabIndex = 4;
+            cashDrawerButton.Text = "Cash Drawer";
+            cashDrawerButton.UseVisualStyleBackColor = true;
+            cashDrawerButton.Click += cashDrawerButton_Click;
+            // 
             // ParentForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 691);
+            Controls.Add(cashDrawerButton);
             Controls.Add(printReceiptButton);
             Controls.Add(homeButton);
             Controls.Add(optionsButton);
@@ -100,5 +113,6 @@
         private Button optionsButton;
         private Button homeButton;
         private Button printReceiptButton;
+        private Button cashDrawerButton;
     }
 }

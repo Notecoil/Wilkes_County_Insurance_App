@@ -72,3 +72,5 @@ C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\bin\Debug\net8.0-windows\M
 C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
 C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
 C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\obj\Debug\net8.0-windows\Wilkes_County_Insurance_App.CashDrawer.resources
+C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\obj\Debug\net8.0-windows\Wilkes_County_Insurance_App.sourcelink.json

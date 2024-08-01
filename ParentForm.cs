@@ -25,10 +25,10 @@ namespace Wilkes_County_Insurance_App
         {
             InitializeComponent();
 
-            parentButtons = new Button[] { homeButton, optionsButton, printReceiptButton};
+            parentButtons = new Button[] { homeButton, optionsButton, printReceiptButton, cashDrawerButton};
             homeInit();
             databaseInit();
-          
+
             connectToDatabase();
         }
 
@@ -167,6 +167,20 @@ namespace Wilkes_County_Insurance_App
             printReceipt.FormBorderStyle = FormBorderStyle.None;
             panel1.Controls.Add(printReceipt);
             printReceipt.Show();
+        }
+
+        private void cashDrawerButton_Click(object sender, EventArgs e)
+        {
+            CashDrawer cashDrawer = new CashDrawer();
+            buttonInit();
+            cashDrawerButton.Enabled = false;
+            clearPanel();
+
+            cashDrawer.TopLevel = false;
+            cashDrawer.AutoScroll = true;
+            cashDrawer.FormBorderStyle = FormBorderStyle.None;
+            panel1.Controls.Add(cashDrawer);
+            cashDrawer.Show();
         }
     }
 }
