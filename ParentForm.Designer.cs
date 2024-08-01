@@ -33,6 +33,8 @@
             homeButton = new Button();
             printReceiptButton = new Button();
             cashDrawerButton = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -40,7 +42,7 @@
             panel1.AutoScroll = true;
             panel1.AutoSize = true;
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panel1.Location = new Point(12, 12);
+            panel1.Location = new Point(223, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(0, 0);
             panel1.TabIndex = 0;
@@ -89,10 +91,20 @@
             cashDrawerButton.UseVisualStyleBackColor = true;
             cashDrawerButton.Click += cashDrawerButton_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo_resized;
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(205, 171);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // ParentForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1184, 691);
+            Controls.Add(pictureBox1);
             Controls.Add(cashDrawerButton);
             Controls.Add(printReceiptButton);
             Controls.Add(homeButton);
@@ -102,6 +114,7 @@
             Name = "ParentForm";
             Text = "Wilkes County Insurance Agency";
             Load += ParentForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -113,5 +126,6 @@
         private Button homeButton;
         private Button printReceiptButton;
         private Button cashDrawerButton;
+        private PictureBox pictureBox1;
     }
 }

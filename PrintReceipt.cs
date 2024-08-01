@@ -44,8 +44,8 @@ namespace Wilkes_County_Insurance_App
 
             initUI();
 
-            entryFields = new System.Windows.Forms.Control[] { firstNameTextBox, lastNameTextBox, employeeComboBox, remitTextBox, referenceTextBox, transactionDescriptionTextBox, paymentAmountTextBox, paymentMethodComboBox};
-            inputStrings = new string[] { "First Name", "Last Name", "User ID", "Remit To", "Reference", "Transaction Description", "Payment Amount", "Payment Method" };
+            entryFields = new System.Windows.Forms.Control[] { firstNameTextBox, lastNameTextBox, employeeComboBox, remitTextBox, referenceTextBox, transactionDescriptionTextBox, paymentAmountTextBox};
+            inputStrings = new string[] { "First Name", "Last Name", "User ID", "Remit To", "Reference", "Transaction Description", "Payment Amount"};
         }
 
         private void employeeComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -228,7 +228,8 @@ namespace Wilkes_County_Insurance_App
             remit_to = remitTextBox.Text;
             reference = referenceTextBox.Text;
             transactionDescription = transactionDescriptionTextBox.Text;
-            paymentMethod = paymentMethodComboBox.SelectedItem.ToString();
+            //paymentMethod = paymentMethodComboBox.SelectedItem.ToString();
+            paymentMethod = "Cash";
             //amountTendered = amountTenderedTextBox.Text;
 
             /*try

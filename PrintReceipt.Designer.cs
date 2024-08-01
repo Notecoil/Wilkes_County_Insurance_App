@@ -152,7 +152,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(99, 242);
+            label7.Location = new Point(95, 242);
             label7.Name = "label7";
             label7.Size = new Size(62, 15);
             label7.TabIndex = 11;
@@ -184,11 +184,12 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(56, 360);
+            label9.Location = new Point(56, 446);
             label9.Name = "label9";
             label9.Size = new Size(102, 15);
             label9.TabIndex = 15;
             label9.Text = "Payment Method:";
+            label9.Visible = false;
             // 
             // paymentAmountTextBox
             // 
@@ -201,7 +202,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(29, 322);
+            label10.Location = new Point(25, 322);
             label10.Name = "label10";
             label10.Size = new Size(132, 15);
             label10.TabIndex = 17;
@@ -209,7 +210,7 @@
             // 
             // printReceiptButton
             // 
-            printReceiptButton.Location = new Point(201, 416);
+            printReceiptButton.Location = new Point(208, 360);
             printReceiptButton.Name = "printReceiptButton";
             printReceiptButton.Size = new Size(99, 23);
             printReceiptButton.TabIndex = 19;
@@ -222,55 +223,61 @@
             paymentMethodComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             paymentMethodComboBox.FormattingEnabled = true;
             paymentMethodComboBox.Items.AddRange(new object[] { "", "Cash", "Credit" });
-            paymentMethodComboBox.Location = new Point(164, 357);
+            paymentMethodComboBox.Location = new Point(164, 443);
             paymentMethodComboBox.Name = "paymentMethodComboBox";
             paymentMethodComboBox.Size = new Size(200, 23);
             paymentMethodComboBox.TabIndex = 20;
+            paymentMethodComboBox.Visible = false;
             paymentMethodComboBox.SelectedIndexChanged += paymentMethodComboBox_SelectedIndexChanged;
             // 
             // amountTenderedLabel
             // 
             amountTenderedLabel.AutoSize = true;
-            amountTenderedLabel.Location = new Point(387, 360);
+            amountTenderedLabel.Location = new Point(387, 446);
             amountTenderedLabel.Name = "amountTenderedLabel";
             amountTenderedLabel.Size = new Size(114, 15);
             amountTenderedLabel.TabIndex = 21;
             amountTenderedLabel.Text = "Amount Tendered: $";
+            amountTenderedLabel.Visible = false;
             // 
             // amountTenderedTextBox
             // 
-            amountTenderedTextBox.Location = new Point(507, 357);
+            amountTenderedTextBox.Location = new Point(507, 443);
             amountTenderedTextBox.Name = "amountTenderedTextBox";
             amountTenderedTextBox.Size = new Size(100, 23);
             amountTenderedTextBox.TabIndex = 22;
+            amountTenderedTextBox.Visible = false;
             amountTenderedTextBox.TextChanged += amountTenderedTextBox_TextChanged;
             // 
             // changeDueLabel
             // 
             changeDueLabel.AutoSize = true;
-            changeDueLabel.Location = new Point(417, 398);
+            changeDueLabel.Location = new Point(417, 484);
             changeDueLabel.Name = "changeDueLabel";
             changeDueLabel.Size = new Size(84, 15);
             changeDueLabel.TabIndex = 23;
             changeDueLabel.Text = "Change Due: $";
+            changeDueLabel.Visible = false;
             // 
             // changeDueTextBox
             // 
-            changeDueTextBox.Location = new Point(507, 395);
+            changeDueTextBox.Location = new Point(507, 481);
             changeDueTextBox.Name = "changeDueTextBox";
             changeDueTextBox.ReadOnly = true;
             changeDueTextBox.Size = new Size(100, 23);
             changeDueTextBox.TabIndex = 24;
+            changeDueTextBox.Visible = false;
             // 
             // numbersOnlyLabel
             // 
             numbersOnlyLabel.AutoSize = true;
             numbersOnlyLabel.ForeColor = Color.Red;
-            numbersOnlyLabel.Location = new Point(613, 360);
+            numbersOnlyLabel.Location = new Point(613, 446);
             numbersOnlyLabel.Name = "numbersOnlyLabel";
             numbersOnlyLabel.Size = new Size(84, 15);
             numbersOnlyLabel.TabIndex = 25;
             numbersOnlyLabel.Text = "Numbers Only";
+            numbersOnlyLabel.Visible = false;
             // 
             // billPaymentWarningLabel
             // 
