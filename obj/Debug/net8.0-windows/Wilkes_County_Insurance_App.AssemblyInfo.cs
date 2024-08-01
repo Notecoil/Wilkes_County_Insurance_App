@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Wilkes_County_Insurance_App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b1e84cd97143d6464026a29b2f885036421c8d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61b4b9805388703304b1fd747ee82a01c8eae5ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("Wilkes_County_Insurance_App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Wilkes_County_Insurance_App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
