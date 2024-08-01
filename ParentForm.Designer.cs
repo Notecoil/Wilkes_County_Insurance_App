@@ -49,44 +49,41 @@
             // 
             // optionsButton
             // 
-            optionsButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            optionsButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             optionsButton.Image = Properties.Resources.Options_icon;
-            optionsButton.Location = new Point(1110, 66);
+            optionsButton.Location = new Point(12, 631);
             optionsButton.Name = "optionsButton";
             optionsButton.Size = new Size(62, 48);
-            optionsButton.TabIndex = 1;
+            optionsButton.TabIndex = 4;
             optionsButton.UseVisualStyleBackColor = true;
             optionsButton.Click += optionsButton_Click;
             // 
             // homeButton
             // 
-            homeButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             homeButton.Image = Properties.Resources.Home_icon;
-            homeButton.Location = new Point(1110, 12);
+            homeButton.Location = new Point(12, 189);
             homeButton.Name = "homeButton";
             homeButton.Size = new Size(62, 48);
-            homeButton.TabIndex = 2;
+            homeButton.TabIndex = 0;
             homeButton.UseVisualStyleBackColor = true;
             homeButton.Click += homeButton_Click;
             // 
             // printReceiptButton
             // 
-            printReceiptButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            printReceiptButton.Location = new Point(1110, 120);
+            printReceiptButton.Location = new Point(12, 243);
             printReceiptButton.Name = "printReceiptButton";
             printReceiptButton.Size = new Size(62, 48);
-            printReceiptButton.TabIndex = 3;
+            printReceiptButton.TabIndex = 1;
             printReceiptButton.Text = "Print Receipt";
             printReceiptButton.UseVisualStyleBackColor = true;
             printReceiptButton.Click += printReceiptButton_Click;
             // 
             // cashDrawerButton
             // 
-            cashDrawerButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cashDrawerButton.Location = new Point(1110, 174);
+            cashDrawerButton.Location = new Point(12, 297);
             cashDrawerButton.Name = "cashDrawerButton";
             cashDrawerButton.Size = new Size(62, 48);
-            cashDrawerButton.TabIndex = 4;
+            cashDrawerButton.TabIndex = 2;
             cashDrawerButton.Text = "Cash Drawer";
             cashDrawerButton.UseVisualStyleBackColor = true;
             cashDrawerButton.Click += cashDrawerButton_Click;

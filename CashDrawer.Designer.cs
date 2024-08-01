@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             drawerAmountDataView = new DataGridView();
+            dateTimePicker1 = new DateTimePicker();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)drawerAmountDataView).BeginInit();
             SuspendLayout();
             // 
@@ -45,24 +49,62 @@
             drawerAmountDataView.BorderStyle = BorderStyle.None;
             drawerAmountDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.BackColor = SystemColors.Menu;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Menu;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             drawerAmountDataView.DefaultCellStyle = dataGridViewCellStyle1;
             drawerAmountDataView.Location = new Point(179, 81);
+            drawerAmountDataView.MultiSelect = false;
             drawerAmountDataView.Name = "drawerAmountDataView";
             drawerAmountDataView.ReadOnly = true;
-            drawerAmountDataView.Size = new Size(675, 423);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Transparent;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            drawerAmountDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            drawerAmountDataView.Size = new Size(675, 298);
             drawerAmountDataView.TabIndex = 0;
+            drawerAmountDataView.CellContentClick += drawerAmountDataView_CellContentClick;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(179, 403);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(179, 447);
+            button1.Name = "button1";
+            button1.Size = new Size(141, 23);
+            button1.TabIndex = 2;
+            button1.Text = "Print from selected date";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(179, 485);
+            button2.Name = "button2";
+            button2.Size = new Size(141, 23);
+            button2.TabIndex = 3;
+            button2.Text = "Clear Cash Drawers";
+            button2.UseVisualStyleBackColor = true;
             // 
             // CashDrawer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1076, 628);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(dateTimePicker1);
             Controls.Add(drawerAmountDataView);
             Name = "CashDrawer";
             Text = "CashDrawer";
@@ -73,5 +115,8 @@
         #endregion
 
         private DataGridView drawerAmountDataView;
+        private DateTimePicker dateTimePicker1;
+        private Button button1;
+        private Button button2;
     }
 }

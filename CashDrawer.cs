@@ -43,7 +43,8 @@ namespace Wilkes_County_Insurance_App
             }*/
 
             MySqlCommand cmd = parentForm.connection.CreateCommand();
-            cmd.CommandText = "SELECT employee_name, payment_method, COUNT(*), CONCAT('$', FORMAT(SUM(payment_amount), 2, 'en_US')) FROM receipts WHERE payment_method='Cash' GROUP BY employee_name;";
+            //cmd.CommandText = "SELECT employee_name, payment_method, COUNT(*), CONCAT('$', FORMAT(SUM(payment_amount), 2, 'en_US')) FROM receipts WHERE payment_method='Cash' GROUP BY employee_name;";
+            cmd.CommandText = "SELECT employee_name, receipt_item_total, CONCAT('$', FORMAT(receipt_cash_amount, 2, 'en_US')) FROM cash_drawer;";
             //MySqlDataReader reader = cmd.ExecuteReader();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             adapter.SelectCommand = cmd;
@@ -53,12 +54,18 @@ namespace Wilkes_County_Insurance_App
             source.DataSource = table;
             drawerAmountDataView.DataSource = source;
 
-            
+
+
 
             drawerAmountDataView.Columns[0].HeaderText = "Employee ID";
-            drawerAmountDataView.Columns[1].HeaderText = "Payment Method";
-            drawerAmountDataView.Columns[2].HeaderText = "Number of Transactions";
-            drawerAmountDataView.Columns[3].HeaderText = "Total Amount";
+            drawerAmountDataView.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+            //drawerAmountDataView.Columns[1].HeaderText = "Payment Method";
+            drawerAmountDataView.Columns[1].HeaderText = "Total Items";
+            drawerAmountDataView.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+            drawerAmountDataView.Columns[2].HeaderText = "Total Cash Amount";
+            drawerAmountDataView.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+          
 
             //drawerAmountDataView.RowTemplate.Height = 25;
 
@@ -71,5 +78,15 @@ namespace Wilkes_County_Insurance_App
 
             drawerAmountDataView.Height = height;*/
         }
+
+        private void drawerAmountDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }   
+
+        private void drawerAmountDataView_SelectionChanged(object sender, EventArgs e)
+        {
+            drawerAmountDataView.CurrentCell.Selected = false;
+        }   
     }
 }

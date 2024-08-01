@@ -140,6 +140,7 @@ namespace Wilkes_County_Insurance_App
             foreach (Button button in parentButtons)
             {
                 button.Enabled = true;
+                this.ActiveControl = null;
             }
         }
 
