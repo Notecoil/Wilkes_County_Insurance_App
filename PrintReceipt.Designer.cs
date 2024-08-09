@@ -38,7 +38,6 @@
             label5 = new Label();
             employeeComboBox = new ComboBox();
             label6 = new Label();
-            remitTextBox = new TextBox();
             label7 = new Label();
             referenceTextBox = new TextBox();
             transactionDescriptionTextBox = new TextBox();
@@ -54,6 +53,10 @@
             changeDueTextBox = new TextBox();
             numbersOnlyLabel = new Label();
             billPaymentWarningLabel = new Label();
+            remitToComboBox = new ComboBox();
+            clearFieldsButton = new Button();
+            editExistingReceiptButton = new Button();
+            editingReceiptLabel = new Label();
             SuspendLayout();
             // 
             // label1
@@ -129,7 +132,7 @@
             employeeComboBox.Items.AddRange(new object[] { "" });
             employeeComboBox.Location = new Point(164, 143);
             employeeComboBox.Name = "employeeComboBox";
-            employeeComboBox.Size = new Size(121, 23);
+            employeeComboBox.Size = new Size(200, 23);
             employeeComboBox.TabIndex = 8;
             employeeComboBox.SelectedIndexChanged += employeeComboBox_SelectedIndexChanged;
             // 
@@ -141,13 +144,6 @@
             label6.Size = new Size(55, 15);
             label6.TabIndex = 9;
             label6.Text = "Remit to:";
-            // 
-            // remitTextBox
-            // 
-            remitTextBox.Location = new Point(164, 191);
-            remitTextBox.Name = "remitTextBox";
-            remitTextBox.Size = new Size(200, 23);
-            remitTextBox.TabIndex = 10;
             // 
             // label7
             // 
@@ -184,7 +180,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(56, 446);
+            label9.Location = new Point(361, 496);
             label9.Name = "label9";
             label9.Size = new Size(102, 15);
             label9.TabIndex = 15;
@@ -210,7 +206,7 @@
             // 
             // printReceiptButton
             // 
-            printReceiptButton.Location = new Point(208, 360);
+            printReceiptButton.Location = new Point(265, 360);
             printReceiptButton.Name = "printReceiptButton";
             printReceiptButton.Size = new Size(99, 23);
             printReceiptButton.TabIndex = 19;
@@ -223,7 +219,7 @@
             paymentMethodComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             paymentMethodComboBox.FormattingEnabled = true;
             paymentMethodComboBox.Items.AddRange(new object[] { "", "Cash", "Credit" });
-            paymentMethodComboBox.Location = new Point(164, 443);
+            paymentMethodComboBox.Location = new Point(469, 493);
             paymentMethodComboBox.Name = "paymentMethodComboBox";
             paymentMethodComboBox.Size = new Size(200, 23);
             paymentMethodComboBox.TabIndex = 20;
@@ -233,7 +229,7 @@
             // amountTenderedLabel
             // 
             amountTenderedLabel.AutoSize = true;
-            amountTenderedLabel.Location = new Point(387, 446);
+            amountTenderedLabel.Location = new Point(692, 496);
             amountTenderedLabel.Name = "amountTenderedLabel";
             amountTenderedLabel.Size = new Size(114, 15);
             amountTenderedLabel.TabIndex = 21;
@@ -242,7 +238,7 @@
             // 
             // amountTenderedTextBox
             // 
-            amountTenderedTextBox.Location = new Point(507, 443);
+            amountTenderedTextBox.Location = new Point(812, 493);
             amountTenderedTextBox.Name = "amountTenderedTextBox";
             amountTenderedTextBox.Size = new Size(100, 23);
             amountTenderedTextBox.TabIndex = 22;
@@ -252,7 +248,7 @@
             // changeDueLabel
             // 
             changeDueLabel.AutoSize = true;
-            changeDueLabel.Location = new Point(417, 484);
+            changeDueLabel.Location = new Point(722, 534);
             changeDueLabel.Name = "changeDueLabel";
             changeDueLabel.Size = new Size(84, 15);
             changeDueLabel.TabIndex = 23;
@@ -261,7 +257,7 @@
             // 
             // changeDueTextBox
             // 
-            changeDueTextBox.Location = new Point(507, 481);
+            changeDueTextBox.Location = new Point(812, 531);
             changeDueTextBox.Name = "changeDueTextBox";
             changeDueTextBox.ReadOnly = true;
             changeDueTextBox.Size = new Size(100, 23);
@@ -272,7 +268,7 @@
             // 
             numbersOnlyLabel.AutoSize = true;
             numbersOnlyLabel.ForeColor = Color.Red;
-            numbersOnlyLabel.Location = new Point(613, 446);
+            numbersOnlyLabel.Location = new Point(918, 496);
             numbersOnlyLabel.Name = "numbersOnlyLabel";
             numbersOnlyLabel.Size = new Size(84, 15);
             numbersOnlyLabel.TabIndex = 25;
@@ -289,12 +285,56 @@
             billPaymentWarningLabel.TabIndex = 26;
             billPaymentWarningLabel.Text = "Numbers Only";
             // 
+            // remitToComboBox
+            // 
+            remitToComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            remitToComboBox.FormattingEnabled = true;
+            remitToComboBox.Items.AddRange(new object[] { "" });
+            remitToComboBox.Location = new Point(164, 191);
+            remitToComboBox.Name = "remitToComboBox";
+            remitToComboBox.Size = new Size(200, 23);
+            remitToComboBox.TabIndex = 9;
+            // 
+            // clearFieldsButton
+            // 
+            clearFieldsButton.Location = new Point(265, 389);
+            clearFieldsButton.Name = "clearFieldsButton";
+            clearFieldsButton.Size = new Size(99, 23);
+            clearFieldsButton.TabIndex = 28;
+            clearFieldsButton.Text = "Clear Fields";
+            clearFieldsButton.UseVisualStyleBackColor = true;
+            clearFieldsButton.Click += clearFieldsButton_Click;
+            // 
+            // editExistingReceiptButton
+            // 
+            editExistingReceiptButton.Location = new Point(265, 418);
+            editExistingReceiptButton.Name = "editExistingReceiptButton";
+            editExistingReceiptButton.Size = new Size(100, 39);
+            editExistingReceiptButton.TabIndex = 29;
+            editExistingReceiptButton.Text = "Edit Existing Receipt";
+            editExistingReceiptButton.UseVisualStyleBackColor = true;
+            editExistingReceiptButton.Click += editExistingReceiptButton_Click;
+            // 
+            // editingReceiptLabel
+            // 
+            editingReceiptLabel.AutoSize = true;
+            editingReceiptLabel.ForeColor = SystemColors.MenuHighlight;
+            editingReceiptLabel.Location = new Point(408, 63);
+            editingReceiptLabel.Name = "editingReceiptLabel";
+            editingReceiptLabel.Size = new Size(86, 15);
+            editingReceiptLabel.TabIndex = 30;
+            editingReceiptLabel.Text = "Editing Receipt";
+            // 
             // PrintReceipt
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(1076, 628);
+            Controls.Add(editingReceiptLabel);
+            Controls.Add(editExistingReceiptButton);
+            Controls.Add(clearFieldsButton);
+            Controls.Add(remitToComboBox);
             Controls.Add(billPaymentWarningLabel);
             Controls.Add(numbersOnlyLabel);
             Controls.Add(changeDueTextBox);
@@ -310,7 +350,6 @@
             Controls.Add(label8);
             Controls.Add(referenceTextBox);
             Controls.Add(label7);
-            Controls.Add(remitTextBox);
             Controls.Add(label6);
             Controls.Add(employeeComboBox);
             Controls.Add(label5);
@@ -339,7 +378,6 @@
         private Label label5;
         private ComboBox employeeComboBox;
         private Label label6;
-        private TextBox remitTextBox;
         private Label label7;
         private TextBox referenceTextBox;
         private TextBox transactionDescriptionTextBox;
@@ -355,5 +393,9 @@
         private TextBox changeDueTextBox;
         private Label numbersOnlyLabel;
         private Label billPaymentWarningLabel;
+        private ComboBox remitToComboBox;
+        private Button clearFieldsButton;
+        private Button editExistingReceiptButton;
+        private Label editingReceiptLabel;
     }
 }

@@ -65,9 +65,9 @@ namespace Wilkes_County_Insurance_App
             drawerAmountDataView.Columns[2].HeaderText = "Total Cash Amount";
             drawerAmountDataView.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
 
-          
 
-            //drawerAmountDataView.RowTemplate.Height = 25;
+
+            //drawerAmountDataView.RowTemplate.Height = 500;
 
             /*var height = drawerAmountDataView.ColumnHeadersHeight;
 
