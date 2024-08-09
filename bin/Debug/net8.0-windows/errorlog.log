@@ -1,0 +1,104 @@
+8/9/2024 2:27:23 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.OptionsForm.populateUsers() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\OptionsForm.cs:line 72
+8/9/2024 2:29:25 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.OptionsForm.populateUsers() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\OptionsForm.cs:line 72
+8/9/2024 2:29:29 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.OptionsForm.populateUsers() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\OptionsForm.cs:line 72
+8/9/2024 2:33:06 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
+8/9/2024 2:33:52 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.PrintReceipt.fillEmployees() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 96
+8/9/2024 2:33:52 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.PrintReceipt.fillInsuranceCompanies() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 126
+8/9/2024 2:33:52 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
+8/9/2024 2:35:20 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.PrintReceipt.fillEmployees() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 97
+8/9/2024 2:35:20 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.PrintReceipt.fillInsuranceCompanies() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 127
+8/9/2024 2:36:21 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
+8/9/2024 2:37:25 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
+8/9/2024 2:38:20 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.PrintReceipt.fillEmployees() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 96
+8/9/2024 2:38:20 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.PrintReceipt.fillInsuranceCompanies() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 126
+8/9/2024 2:38:20 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
+8/9/2024 2:38:22 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
+8/9/2024 2:38:46 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.PrintReceipt.fillEmployees() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 97
+8/9/2024 2:38:46 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.PrintReceipt.fillInsuranceCompanies() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 127
+8/9/2024 2:38:47 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
+8/9/2024 2:38:54 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
+8/9/2024 2:39:00 PM System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at Wilkes_County_Insurance_App.OptionsForm.populateUsers() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\OptionsForm.cs:line 72

@@ -39,12 +39,19 @@
             editDatabaseCheckBox = new CheckBox();
             connectToDatabaseButton = new Button();
             databaseStatusButton = new Button();
+            optionsSelectionListBox = new ListBox();
+            databasePanel = new Panel();
+            generalPanel = new Panel();
+            userComboBox = new ComboBox();
+            label5 = new Label();
+            databasePanel.SuspendLayout();
+            generalPanel.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(180, 119);
+            label1.Location = new Point(9, 80);
             label1.Name = "label1";
             label1.Size = new Size(90, 15);
             label1.TabIndex = 0;
@@ -53,7 +60,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(189, 159);
+            label2.Location = new Point(9, 120);
             label2.Name = "label2";
             label2.Size = new Size(81, 15);
             label2.TabIndex = 1;
@@ -62,7 +69,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(162, 199);
+            label3.Location = new Point(9, 160);
             label3.Name = "label3";
             label3.Size = new Size(108, 15);
             label3.TabIndex = 2;
@@ -71,7 +78,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(215, 239);
+            label4.Location = new Point(9, 200);
             label4.Name = "label4";
             label4.Size = new Size(55, 15);
             label4.TabIndex = 3;
@@ -79,37 +86,37 @@
             // 
             // serverTextBox
             // 
-            serverTextBox.Location = new Point(276, 120);
+            serverTextBox.Location = new Point(123, 77);
             serverTextBox.Name = "serverTextBox";
-            serverTextBox.Size = new Size(100, 23);
+            serverTextBox.Size = new Size(125, 23);
             serverTextBox.TabIndex = 4;
             // 
             // userTextBox
             // 
-            userTextBox.Location = new Point(276, 156);
+            userTextBox.Location = new Point(123, 117);
             userTextBox.Name = "userTextBox";
-            userTextBox.Size = new Size(100, 23);
+            userTextBox.Size = new Size(125, 23);
             userTextBox.TabIndex = 5;
             // 
             // passwordTextBox
             // 
-            passwordTextBox.Location = new Point(276, 196);
+            passwordTextBox.Location = new Point(123, 157);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.PasswordChar = '●';
-            passwordTextBox.Size = new Size(100, 23);
+            passwordTextBox.Size = new Size(125, 23);
             passwordTextBox.TabIndex = 6;
             // 
             // databaseTextBox
             // 
-            databaseTextBox.Location = new Point(276, 236);
+            databaseTextBox.Location = new Point(123, 197);
             databaseTextBox.Name = "databaseTextBox";
-            databaseTextBox.Size = new Size(100, 23);
+            databaseTextBox.Size = new Size(125, 23);
             databaseTextBox.TabIndex = 7;
             // 
             // editDatabaseCheckBox
             // 
             editDatabaseCheckBox.AutoSize = true;
-            editDatabaseCheckBox.Location = new Point(213, 69);
+            editDatabaseCheckBox.Location = new Point(85, 40);
             editDatabaseCheckBox.Name = "editDatabaseCheckBox";
             editDatabaseCheckBox.Size = new Size(163, 19);
             editDatabaseCheckBox.TabIndex = 8;
@@ -119,7 +126,7 @@
             // 
             // connectToDatabaseButton
             // 
-            connectToDatabaseButton.Location = new Point(246, 281);
+            connectToDatabaseButton.Location = new Point(118, 230);
             connectToDatabaseButton.Name = "connectToDatabaseButton";
             connectToDatabaseButton.Size = new Size(130, 23);
             connectToDatabaseButton.TabIndex = 9;
@@ -129,7 +136,7 @@
             // 
             // databaseStatusButton
             // 
-            databaseStatusButton.Location = new Point(137, 281);
+            databaseStatusButton.Location = new Point(9, 230);
             databaseStatusButton.Name = "databaseStatusButton";
             databaseStatusButton.Size = new Size(103, 23);
             databaseStatusButton.TabIndex = 10;
@@ -137,26 +144,79 @@
             databaseStatusButton.UseVisualStyleBackColor = true;
             databaseStatusButton.Click += databaseStatusButton_Click;
             // 
+            // optionsSelectionListBox
+            // 
+            optionsSelectionListBox.FormattingEnabled = true;
+            optionsSelectionListBox.ItemHeight = 15;
+            optionsSelectionListBox.Items.AddRange(new object[] { "General", "Database" });
+            optionsSelectionListBox.Location = new Point(12, 12);
+            optionsSelectionListBox.Name = "optionsSelectionListBox";
+            optionsSelectionListBox.Size = new Size(120, 604);
+            optionsSelectionListBox.TabIndex = 11;
+            optionsSelectionListBox.SelectedIndexChanged += optionsSelectionListBox_SelectedIndexChanged;
+            // 
+            // databasePanel
+            // 
+            databasePanel.Controls.Add(editDatabaseCheckBox);
+            databasePanel.Controls.Add(label1);
+            databasePanel.Controls.Add(databaseStatusButton);
+            databasePanel.Controls.Add(label2);
+            databasePanel.Controls.Add(connectToDatabaseButton);
+            databasePanel.Controls.Add(label3);
+            databasePanel.Controls.Add(label4);
+            databasePanel.Controls.Add(databaseTextBox);
+            databasePanel.Controls.Add(serverTextBox);
+            databasePanel.Controls.Add(passwordTextBox);
+            databasePanel.Controls.Add(userTextBox);
+            databasePanel.Location = new Point(138, 258);
+            databasePanel.Name = "databasePanel";
+            databasePanel.Size = new Size(618, 358);
+            databasePanel.TabIndex = 12;
+            // 
+            // generalPanel
+            // 
+            generalPanel.Controls.Add(userComboBox);
+            generalPanel.Controls.Add(label5);
+            generalPanel.Location = new Point(138, 12);
+            generalPanel.Name = "generalPanel";
+            generalPanel.Size = new Size(831, 240);
+            generalPanel.TabIndex = 13;
+            // 
+            // userComboBox
+            // 
+            userComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            userComboBox.FormattingEnabled = true;
+            userComboBox.Items.AddRange(new object[] { "" });
+            userComboBox.Location = new Point(85, 20);
+            userComboBox.Name = "userComboBox";
+            userComboBox.Size = new Size(121, 23);
+            userComboBox.TabIndex = 14;
+            userComboBox.SelectedIndexChanged += userComboBox_SelectedIndexChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(9, 23);
+            label5.Name = "label5";
+            label5.Size = new Size(71, 15);
+            label5.TabIndex = 13;
+            label5.Text = "Default User";
+            // 
             // OptionsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1076, 628);
-            Controls.Add(databaseStatusButton);
-            Controls.Add(connectToDatabaseButton);
-            Controls.Add(editDatabaseCheckBox);
-            Controls.Add(databaseTextBox);
-            Controls.Add(passwordTextBox);
-            Controls.Add(userTextBox);
-            Controls.Add(serverTextBox);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(generalPanel);
+            Controls.Add(optionsSelectionListBox);
+            Controls.Add(databasePanel);
             Name = "OptionsForm";
             Text = "OptionsForm";
+            databasePanel.ResumeLayout(false);
+            databasePanel.PerformLayout();
+            generalPanel.ResumeLayout(false);
+            generalPanel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -172,5 +232,10 @@
         private CheckBox editDatabaseCheckBox;
         private Button connectToDatabaseButton;
         private Button databaseStatusButton;
+        private ListBox optionsSelectionListBox;
+        private Panel databasePanel;
+        private Panel generalPanel;
+        private ComboBox userComboBox;
+        private Label label5;
     }
 }

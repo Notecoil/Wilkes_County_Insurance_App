@@ -14,6 +14,8 @@ namespace Wilkes_County_Insurance_App
     public partial class ParentForm : Form
     {
         public string databaseInitFileName = "databaseInit.txt";
+        public string defaultUserFileName = "defaultuser";
+        public string errorFileName = "errorlog.log";
         //public string[] databaseConfig;
         public MySqlConnection connection;
         public string connectionError;
@@ -28,8 +30,18 @@ namespace Wilkes_County_Insurance_App
             parentButtons = new Button[] { homeButton, optionsButton, printReceiptButton, cashDrawerButton};
             homeInit();
             databaseInit();
+            defaultUser();
+            errorFile();
 
             connectToDatabase();
+        }
+
+        private void errorFile()
+        {
+            if (!File.Exists(errorFileName))
+            {
+                File.WriteAllText(errorFileName, "");
+            }
         }
 
         /*private void panel1_Paint(object sender, PaintEventArgs e)
@@ -80,6 +92,18 @@ namespace Wilkes_County_Insurance_App
             else
             {
                 File.WriteAllText(databaseInitFileName, "\n\n\n\n");
+            }
+        }
+
+        private void defaultUser()
+        {
+            if (File.Exists(defaultUserFileName))
+            {
+                
+            }
+            else
+            {
+                File.WriteAllText(defaultUserFileName, "\n");
             }
         }
 

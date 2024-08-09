@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace Wilkes_County_Insurance_App
     public partial class OptionsForm : Form
     {
         public string fileName = "databaseInit.txt";
+        public string defaultUserFileName = "defaultuser";
         string[] databaseLines;
         public string server;
         public string userid;
@@ -26,6 +28,18 @@ namespace Wilkes_County_Insurance_App
         {
             InitializeComponent();
             fillTextBoxes();
+            initUI();
+        }
+
+        private void initUI()
+        {
+
+            databasePanel.Visible = false;
+            generalPanel.Visible = false;
+            populateUsers();
+            string defaultUser = Encoding.ASCII.GetString(File.ReadAllBytes(defaultUserFileName));
+            userComboBox.SelectedItem = defaultUser;
+            optionsSelectionListBox.SelectedItem = "General";
         }
 
         private void fillTextBoxes()
@@ -47,6 +61,26 @@ namespace Wilkes_County_Insurance_App
             userTextBox.Text = databaseLines[1];
             passwordTextBox.Text = databaseLines[2];
             databaseTextBox.Text = databaseLines[3];
+        }
+
+        private void populateUsers()
+        {
+            try
+            {
+                MySqlCommand cmd = parentForm.connection.CreateCommand();
+                cmd.CommandText = "SELECT * FROM employees;";
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    userComboBox.Items.Add(reader["first_name"].ToString() + " " + reader["last_name"].ToString());
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                //File.WriteAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
+            }
         }
 
         private void editDatabaseCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -138,6 +172,39 @@ namespace Wilkes_County_Insurance_App
         {
             //ParentForm parentForm1 = new ParentForm();
             MessageBox.Show($"Database Status: {parentForm.connection.State}");
+        }
+
+        private void optionsSelectionListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedOption = optionsSelectionListBox.SelectedItem.ToString();
+
+            switch (selectedOption)
+            {
+                case "Database":
+                    clearPanels();
+                    databasePanel.Visible = true;
+                    break;
+                case "General":
+                    clearPanels();
+                    generalPanel.Visible = true;
+                    break;
+            }
+        }
+
+        private void clearPanels()
+        {
+            for (int i = 0; i < this.Controls.Count; i++)
+            {
+                if (this.Controls[i] is Panel)
+                {
+                    this.Controls[i].Visible = false;
+                }
+            }
+        }
+
+        private void userComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            File.WriteAllBytes(defaultUserFileName, Encoding.ASCII.GetBytes(userComboBox.SelectedItem.ToString()));
         }
     }
 }

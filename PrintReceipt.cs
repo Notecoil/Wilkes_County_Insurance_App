@@ -36,6 +36,8 @@ namespace Wilkes_County_Insurance_App
 
         private int selectedReceiptID;
 
+        string defaultEmployee;
+
         private System.Windows.Forms.Control[] entryFields;
         private string[] inputStrings;
 
@@ -60,10 +62,14 @@ namespace Wilkes_County_Insurance_App
         private void initUI()
         {
             fillEmployees();
+            getDefaultEmployee();
             fillInsuranceCompanies();
             paymentMethodComboBox.SelectedIndex = 0;
             editingReceiptLabel.Visible = false;
             receiptDatePicker.Value = DateTime.Now;
+
+            defaultEmployee = File.ReadAllText(parentForm.defaultUserFileName);
+            employeeComboBox.SelectedItem = defaultEmployee;
 
             amountTenderedLabel.Visible = false;
             amountTenderedTextBox.Visible = false;
@@ -76,7 +82,9 @@ namespace Wilkes_County_Insurance_App
             if (parentForm.connectionError != null)
             {
                 MessageBox.Show($"Error: {parentForm.connectionError}");
+                File.AppendAllLines("errorlog.log", new string[] { $"{DateTime.Now} {parentForm.connectionError}" });
                 printReceiptButton.Enabled = false;
+                editExistingReceiptButton.Enabled = false;
             }
         }
 
@@ -98,9 +106,16 @@ namespace Wilkes_County_Insurance_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
+                //MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
                 printReceiptButton.Enabled = false;
             }
+        }
+
+        private void getDefaultEmployee()
+        {
+            string[] defaultEmployee = File.ReadAllLines("defaultuser");
+
         }
 
         private void fillInsuranceCompanies()
@@ -120,7 +135,8 @@ namespace Wilkes_County_Insurance_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
+                //MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
                 printReceiptButton.Enabled = false;
             }
         }
@@ -248,7 +264,8 @@ namespace Wilkes_County_Insurance_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
+                //MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
             }
         }
 
@@ -261,6 +278,7 @@ namespace Wilkes_County_Insurance_App
             editMode = false;
             receiptDatePicker.Value = DateTime.Now;
             editingReceiptLabel.Visible = false;
+            employeeComboBox.SelectedItem = defaultEmployee;
         }
 
         private void saveReceiptToDatabase()
@@ -277,7 +295,8 @@ namespace Wilkes_County_Insurance_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
+                //MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
             }
         }
 
@@ -356,7 +375,7 @@ namespace Wilkes_County_Insurance_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
             }
             return origionalReceiptID += 1;
         }
