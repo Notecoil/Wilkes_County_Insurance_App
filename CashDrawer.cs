@@ -66,7 +66,7 @@ namespace Wilkes_County_Insurance_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {parentForm.connectionError}");
+                MessageBox.Show($"Error: Error: Couldn't connect to the database.\nTry restarting the program or your computer.\nIf the issue still persists contact support.");
                 File.AppendAllLines("errorlog.log", new string[] { $"{DateTime.Now} {parentForm.connectionError}" });
             }
             

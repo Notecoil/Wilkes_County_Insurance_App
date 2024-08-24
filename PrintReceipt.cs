@@ -13,6 +13,7 @@ using QuestPDF.Infrastructure;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using System.Drawing.Text;
+using System.Globalization;
 
 namespace Wilkes_County_Insurance_App
 {
@@ -23,7 +24,7 @@ namespace Wilkes_County_Insurance_App
         private int receiptID;
         private string receivedFromFirstName;
         private string receivedFromLastName;
-        private string receiptDate;
+        private DateTime receiptDate;
         private string receiptTime;
         private string remit_to;
         private string reference;
@@ -81,7 +82,7 @@ namespace Wilkes_County_Insurance_App
 
             if (parentForm.connectionError != null)
             {
-                MessageBox.Show($"Error: {parentForm.connectionError}");
+                MessageBox.Show($"Error: Couldn't connect to the database.\nTry restarting the program or your computer.\nIf the issue still persists contact support.");
                 File.AppendAllLines("errorlog.log", new string[] { $"{DateTime.Now} {parentForm.connectionError}" });
                 printReceiptButton.Enabled = false;
                 editExistingReceiptButton.Enabled = false;
@@ -107,7 +108,7 @@ namespace Wilkes_County_Insurance_App
             catch (Exception ex)
             {
                 //MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
-                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message}\n");
                 printReceiptButton.Enabled = false;
             }
         }
@@ -136,7 +137,7 @@ namespace Wilkes_County_Insurance_App
             catch (Exception ex)
             {
                 //MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
-                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message}\n");
                 printReceiptButton.Enabled = false;
             }
         }
@@ -259,13 +260,17 @@ namespace Wilkes_County_Insurance_App
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
-                cmd.CommandText = $"UPDATE insurancedb.receipts SET received_from_first = '{receivedFromFirstName}', received_from_last = '{receivedFromLastName}', receipt_date = '{receiptDate}', receipt_time = '{receiptTime}', remit_to = '{remit_to}', reference = '{reference}', transaction_description = '{transactionDescription}', payment_method = '{paymentMethod}', payment_amount = {paymentAmount}, cash_paid = {amountTendered}, change_due = {changeDue}, employee_name = '{employeeName}' WHERE receipt_id = {receiptID};";
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.CommandText = $"UPDATE insurancedb.receipts SET received_from_first = '{receivedFromFirstName}', received_from_last = '{receivedFromLastName}', receipt_date = '{receiptDate.ToString("yyyy-MM-dd")}', receipt_time = '{receiptTime}', remit_to = '{remit_to}', reference = '{reference}', transaction_description = '{transactionDescription}', payment_method = '{paymentMethod}', payment_amount = {paymentAmount}, cash_paid = {amountTendered}, change_due = {changeDue}, employee_name = '{employeeName}' WHERE receipt_id = {receiptID};";
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 //MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
-                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message}\n");
             }
         }
 
@@ -286,7 +291,11 @@ namespace Wilkes_County_Insurance_App
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
-                cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES ('{receivedFromFirstName}', '{receivedFromLastName}', '{receiptDate}', '{receiptTime}', '{remit_to}', '{reference}', '{transactionDescription}', '{paymentMethod}', {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES ('{receivedFromFirstName}', '{receivedFromLastName}', '{receiptDate.ToString("yyyy-MM-dd")}', '{receiptTime}', '{remit_to}', '{reference}', '{transactionDescription}', '{paymentMethod}', {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";
                 cmd.ExecuteNonQuery();
 
                 string cashDrawerScript = $"UPDATE cash_drawer SET receipt_item_total = receipt_item_total + 1, receipt_cash_amount = receipt_cash_amount + {paymentAmount} WHERE employee_name = '{employeeName}';";
@@ -296,7 +305,7 @@ namespace Wilkes_County_Insurance_App
             catch (Exception ex)
             {
                 //MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
-                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message}\n");
             }
         }
 
@@ -314,8 +323,10 @@ namespace Wilkes_County_Insurance_App
             receivedFromLastName = lastNameTextBox.Text;
             //receiptDate = DateTime.Now.ToString("MM/dd/yyyy");
             //receiptTime = DateTime.Now.ToString("hh:mm:ss tt");
-            receiptDate = receiptDatePicker.Value.ToString("MM/dd/yyyy");
-            receiptTime = DateTime.Now.ToString("hh:mm:ss tt");
+            //receiptDate = receiptDatePicker.Value.ToString("MM/dd/yyyy");
+            receiptDate = receiptDatePicker.Value;
+            //receiptTime = DateTime.Now.ToString("hh:mm:ss tt");
+            receiptTime = receiptDatePicker.Value.ToString("hh:mm:ss tt");
 
             remit_to = remitToComboBox.SelectedItem.ToString();
             reference = referenceTextBox.Text;
@@ -375,7 +386,7 @@ namespace Wilkes_County_Insurance_App
             }
             catch (Exception ex)
             {
-                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message}\n");
             }
             return origionalReceiptID += 1;
         }
@@ -414,7 +425,7 @@ namespace Wilkes_County_Insurance_App
                                 table.Cell().Row(1).Column(2).Element(BlockLeft).Text(receivedFromFirstName + " " + receivedFromLastName).FontFamily(Fonts.Consolas).FontSize(8);
 
                                 table.Cell().Row(2).Column(1).Element(BlockLeft).Text("Date:").FontFamily(Fonts.Consolas).FontSize(8);
-                                table.Cell().Row(2).Column(2).Element(BlockLeft).Text(receiptDate).FontFamily(Fonts.Consolas).FontSize(8);
+                                table.Cell().Row(2).Column(2).Element(BlockLeft).Text(receiptDate.ToString("MM/dd/yyyy")).FontFamily(Fonts.Consolas).FontSize(8);
 
                                 table.Cell().Row(3).Column(1).Element(BlockLeft).Text("Time:").FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(3).Column(2).Element(BlockLeft).Text(receiptTime).FontFamily(Fonts.Consolas).FontSize(8);
@@ -636,7 +647,8 @@ namespace Wilkes_County_Insurance_App
                     firstNameTextBox.Text = reader["received_from_first"].ToString();
                     lastNameTextBox.Text = reader["received_from_last"].ToString();
                     string date = reader["receipt_date"].ToString();
-                    receiptDatePicker.Value = DateTime.Parse(date);
+                    string time = reader["receipt_time"].ToString();    
+                    receiptDatePicker.Value = DateTime.Parse($"{date} {time}");
                     remitToComboBox.SelectedItem = reader["remit_to"].ToString();
                     referenceTextBox.Text = reader["reference"].ToString();
                     transactionDescriptionTextBox.Text = reader["transaction_description"].ToString();

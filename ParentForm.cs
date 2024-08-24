@@ -27,7 +27,7 @@ namespace Wilkes_County_Insurance_App
         {
             InitializeComponent();
 
-            parentButtons = new Button[] { homeButton, optionsButton, printReceiptButton, cashDrawerButton};
+            parentButtons = new Button[] { homeButton, optionsButton, printReceiptButton, cashDrawerButton, reportsButton};
             homeInit();
             databaseInit();
             defaultUser();
@@ -99,7 +99,7 @@ namespace Wilkes_County_Insurance_App
         {
             if (File.Exists(defaultUserFileName))
             {
-                
+
             }
             else
             {
@@ -109,7 +109,7 @@ namespace Wilkes_County_Insurance_App
 
         private void optionsButton_Click(object sender, EventArgs e)
         {
-            ValidationForm validationForm = new ValidationForm();
+            /*ValidationForm validationForm = new ValidationForm();
             if (validationForm.ShowDialog() == DialogResult.OK)
             {
                 OptionsForm optionsForm = new OptionsForm();
@@ -122,7 +122,17 @@ namespace Wilkes_County_Insurance_App
                 optionsForm.FormBorderStyle = FormBorderStyle.None;
                 panel1.Controls.Add(optionsForm);
                 optionsForm.Show();
-            }
+            }*/
+            OptionsForm optionsForm = new OptionsForm();
+            buttonInit();
+            optionsButton.Enabled = false;
+            clearPanel();
+
+            optionsForm.TopLevel = false;
+            optionsForm.AutoScroll = true;
+            optionsForm.FormBorderStyle = FormBorderStyle.None;
+            panel1.Controls.Add(optionsForm);
+            optionsForm.Show();
         }
 
         private void homeButton_Click(object sender, EventArgs e)
@@ -206,6 +216,20 @@ namespace Wilkes_County_Insurance_App
             cashDrawer.FormBorderStyle = FormBorderStyle.None;
             panel1.Controls.Add(cashDrawer);
             cashDrawer.Show();
+        }
+
+        private void reportsButton_Click(object sender, EventArgs e)
+        {
+            ReportsForm reportsForm = new ReportsForm();
+            buttonInit();
+            reportsButton.Enabled = false;
+            clearPanel();
+
+            reportsForm.TopLevel = false;
+            reportsForm.AutoScroll = true;
+            reportsForm.FormBorderStyle = FormBorderStyle.None;
+            panel1.Controls.Add(reportsForm);
+            reportsForm.Show();
         }
     }
 }

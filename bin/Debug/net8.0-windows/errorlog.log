@@ -102,3 +102,33 @@
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
    at Wilkes_County_Insurance_App.OptionsForm.populateUsers() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\OptionsForm.cs:line 72
+8/9/2024 5:26:28 PM Connection must be valid and open.
+8/9/2024 5:26:28 PM Connection must be valid and open.
+8/9/2024 5:26:34 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic1' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic1'@'DESKTOP-LACU1DD' (using password: YES)
+8/9/2024 5:26:38 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic1' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic1'@'DESKTOP-LACU1DD' (using password: YES)
+8/9/2024 5:27:12 PM Connection must be valid and open.
+8/9/2024 5:27:31 PM Connection must be valid and open.
+8/9/2024 5:30:10 PM Connection must be valid and open.
+8/10/2024 2:20:07 PM String '08/10/2024' was not recognized as a valid DateTime.
+8/10/2024 2:21:17 PM String '08/10/2024' was not recognized as a valid DateTime.
+8/10/2024 2:22:06 PM String '08/10/2024' was not recognized as a valid DateTime.
+8/10/2024 3:20:20 PM 
+8/10/2024 5:18:13 PM Fatal error encountered during command execution.
+8/10/2024 5:18:16 PM Connection must be valid and open.
+8/10/2024 5:18:53 PM Connection must be valid and open.
+8/10/2024 5:18:55 PM Connection must be valid and open.
+8/10/2024 5:41:34 PM Fatal error encountered during command execution.
+8/10/2024 5:42:42 PM Fatal error encountered during command execution.
+8/11/2024 11:27:52 AM You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dasdd', '2024-08-11', '11:27:50 AM', 'Soutern General', 'das', 'das', 'Cash',...' at line 1
+8/11/2024 11:27:55 AM You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT * FROM receipts''', 'somethin', '2024-08-11', '11:22:51 AM', 'Soutern ...' at line 1
+8/17/2024 10:55:23 PM Connection must be valid and open.
+8/17/2024 10:55:24 PM Authentication method 'auth_gssapi_client' not supported by any of the available plugins.
+8/17/2024 10:55:49 PM Connection must be valid and open.
+8/17/2024 10:55:50 PM Authentication method 'auth_gssapi_client' not supported by any of the available plugins.
+8/17/2024 10:56:26 PM Connection must be valid and open.
+8/17/2024 10:56:27 PM Authentication method 'auth_gssapi_client' not supported by any of the available plugins.
+8/17/2024 10:58:32 PM Authentication method 'auth_gssapi_client' not supported by any of the available plugins.
+8/17/2024 10:58:36 PM Authentication method 'auth_gssapi_client' not supported by any of the available plugins.
+8/17/2024 10:58:36 PM Connection must be valid and open.
+8/17/2024 11:17:14 PM 
+8/17/2024 11:19:33 PM 

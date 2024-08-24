@@ -168,9 +168,9 @@
             databasePanel.Controls.Add(serverTextBox);
             databasePanel.Controls.Add(passwordTextBox);
             databasePanel.Controls.Add(userTextBox);
-            databasePanel.Location = new Point(138, 258);
+            databasePanel.Location = new Point(138, 12);
             databasePanel.Name = "databasePanel";
-            databasePanel.Size = new Size(618, 358);
+            databasePanel.Size = new Size(571, 286);
             databasePanel.TabIndex = 12;
             // 
             // generalPanel
@@ -179,7 +179,7 @@
             generalPanel.Controls.Add(label5);
             generalPanel.Location = new Point(138, 12);
             generalPanel.Name = "generalPanel";
-            generalPanel.Size = new Size(831, 240);
+            generalPanel.Size = new Size(589, 224);
             generalPanel.TabIndex = 13;
             // 
             // userComboBox

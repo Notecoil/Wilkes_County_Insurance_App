@@ -38,7 +38,7 @@ namespace Wilkes_County_Insurance_App
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
-                cmd.CommandText = "SELECT receipt_id, CONCAT(received_from_first, ' ', received_from_last) AS name, receipt_date, remit_to, reference, transaction_description, payment_amount, employee_name FROM receipts;";
+                cmd.CommandText = $"SELECT receipt_id, CONCAT(received_from_first, ' ', received_from_last) AS name, DATE_FORMAT(receipt_date, '%m/%d/%Y'), remit_to, reference, transaction_description, payment_amount, employee_name FROM receipts;";
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 DataTable table = new DataTable();

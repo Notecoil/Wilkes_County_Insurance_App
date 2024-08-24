@@ -16,7 +16,7 @@ namespace Wilkes_County_Insurance_App
     {
         public string fileName = "databaseInit.txt";
         public string defaultUserFileName = "defaultuser";
-        string[] databaseLines;
+        
         public string server;
         public string userid;
         public string password;
@@ -33,7 +33,6 @@ namespace Wilkes_County_Insurance_App
 
         private void initUI()
         {
-
             databasePanel.Visible = false;
             generalPanel.Visible = false;
             populateUsers();
@@ -79,12 +78,14 @@ namespace Wilkes_County_Insurance_App
             catch (Exception ex)
             {
                 //File.WriteAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
-                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.ToString()}\n");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message}\n");
             }
         }
 
         private void editDatabaseCheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            string[] databaseLines = File.ReadAllLines(fileName);
+
             if (editDatabaseCheckBox.Checked)
             {
                 serverTextBox.Enabled = true;
@@ -92,6 +93,19 @@ namespace Wilkes_County_Insurance_App
                 passwordTextBox.Enabled = true;
                 databaseTextBox.Enabled = true;
                 connectToDatabaseButton.Enabled = false;
+                /*ValidationForm validationForm = new ValidationForm();
+                if (validationForm.ShowDialog() == DialogResult.OK)
+                {
+                    serverTextBox.Enabled = true;
+                    userTextBox.Enabled = true;
+                    passwordTextBox.Enabled = true;
+                    databaseTextBox.Enabled = true;
+                    connectToDatabaseButton.Enabled = false;
+                }
+                else
+                {
+                    editDatabaseCheckBox.Checked = false;
+                }*/
 
             }
             else
@@ -106,7 +120,7 @@ namespace Wilkes_County_Insurance_App
                     databaseTextBox.Enabled = false;
                     connectToDatabaseButton.Enabled = true;
                 }
-                else
+                else // If user selects no, revert back to original values
                 {
                     //editDatabaseCheckBox.Checked = true;
                     serverTextBox.Text = databaseLines[0];

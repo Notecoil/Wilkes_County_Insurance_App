@@ -75,3 +75,5 @@ C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\bin\Debug\net8.0-windows\M
 C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\obj\Debug\net8.0-windows\Wilkes_County_Insurance_App.CashDrawer.resources
 C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\obj\Debug\net8.0-windows\Wilkes_County_Insurance_App.sourcelink.json
 C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\obj\Debug\net8.0-windows\Wilkes_County_Insurance_App.EditReceipt.resources
+C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\obj\Debug\net8.0-windows\Wilkes_County_Insurance_App.ReportsForm.resources
+C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\obj\Debug\net8.0-windows\Wilkes_County_Insurance_App.DateRangeReport.resources

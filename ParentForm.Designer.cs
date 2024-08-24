@@ -34,6 +34,7 @@
             printReceiptButton = new Button();
             cashDrawerButton = new Button();
             pictureBox1 = new PictureBox();
+            reportsButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -97,10 +98,21 @@
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
+            // reportsButton
+            // 
+            reportsButton.Location = new Point(12, 351);
+            reportsButton.Name = "reportsButton";
+            reportsButton.Size = new Size(62, 48);
+            reportsButton.TabIndex = 6;
+            reportsButton.Text = "Reports";
+            reportsButton.UseVisualStyleBackColor = true;
+            reportsButton.Click += reportsButton_Click;
+            // 
             // ParentForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1184, 691);
+            Controls.Add(reportsButton);
             Controls.Add(pictureBox1);
             Controls.Add(cashDrawerButton);
             Controls.Add(printReceiptButton);
@@ -124,5 +136,6 @@
         private Button printReceiptButton;
         private Button cashDrawerButton;
         private PictureBox pictureBox1;
+        private Button reportsButton;
     }
 }
