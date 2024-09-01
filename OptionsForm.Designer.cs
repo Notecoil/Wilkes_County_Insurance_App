@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -44,8 +45,11 @@
             generalPanel = new Panel();
             userComboBox = new ComboBox();
             label5 = new Label();
+            pictureBox2 = new PictureBox();
+            toolTip1 = new ToolTip(components);
             databasePanel.SuspendLayout();
             generalPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -175,6 +179,7 @@
             // 
             // generalPanel
             // 
+            generalPanel.Controls.Add(pictureBox2);
             generalPanel.Controls.Add(userComboBox);
             generalPanel.Controls.Add(label5);
             generalPanel.Location = new Point(138, 12);
@@ -187,7 +192,7 @@
             userComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             userComboBox.FormattingEnabled = true;
             userComboBox.Items.AddRange(new object[] { "" });
-            userComboBox.Location = new Point(85, 20);
+            userComboBox.Location = new Point(100, 20);
             userComboBox.Name = "userComboBox";
             userComboBox.Size = new Size(121, 23);
             userComboBox.TabIndex = 14;
@@ -196,11 +201,21 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(9, 23);
+            label5.Location = new Point(24, 23);
             label5.Name = "label5";
             label5.Size = new Size(71, 15);
             label5.TabIndex = 13;
             label5.Text = "Default User";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.Information16;
+            pictureBox2.Location = new Point(7, 23);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(18, 15);
+            pictureBox2.TabIndex = 33;
+            pictureBox2.TabStop = false;
+            toolTip1.SetToolTip(pictureBox2, "Default user on this machine.\r\nWhen printing receipts, the selection here\r\nis auto provided.");
             // 
             // OptionsForm
             // 
@@ -216,6 +231,7 @@
             databasePanel.PerformLayout();
             generalPanel.ResumeLayout(false);
             generalPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -237,5 +253,7 @@
         private Panel generalPanel;
         private ComboBox userComboBox;
         private Label label5;
+        private PictureBox pictureBox2;
+        private ToolTip toolTip1;
     }
 }

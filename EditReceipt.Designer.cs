@@ -84,7 +84,7 @@ namespace Wilkes_County_Insurance_App
             exitWindowButton.Name = "exitWindowButton";
             exitWindowButton.Size = new Size(82, 23);
             exitWindowButton.TabIndex = 4;
-            exitWindowButton.Text = "Exit Window";
+            exitWindowButton.Text = "Back";
             exitWindowButton.UseVisualStyleBackColor = true;
             exitWindowButton.Click += exitWindowButton_Click;
             // 

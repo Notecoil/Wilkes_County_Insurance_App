@@ -132,3 +132,64 @@
 8/17/2024 10:58:36 PM Connection must be valid and open.
 8/17/2024 11:17:14 PM 
 8/17/2024 11:19:33 PM 
+8/25/2024 8:30:13 PM Connection must be valid and open.
+8/25/2024 8:34:03 PM Incorrect datetime value: '2024-08-25 20:08:SS' for column `insurancedb`.`receipts`.`receipt_date` at row 1
+8/25/2024 8:38:12 PM Incorrect datetime value: '2024-08-25 20:08:SS.835261' for column `insurancedb`.`receipts`.`receipt_date` at row 1
+8/25/2024 8:45:19 PM Incorrect datetime value: '2024-08-25 08:45:11 PM' for column `insurancedb`.`receipts`.`receipt_date` at row 1
+8/25/2024 9:44:42 PM 
+8/25/2024 9:45:28 PM QuestPDF is a modern open-source library. We identify the importance of the library in your projects and therefore want to make sure you can safely and confidently continue the development. Being a healthy and growing community is the primary goal that motivates us to pursue professionalism. 
+
+Please refer to the QuestPDF License and Pricing webpage for more details. (https://www.questpdf.com/license/) 
+
+If you are an existing QuestPDF user and for any reason cannot update, you can stay with the 2022.12.X release with the extended quality support but without any new features, improvements, or optimizations. That release will always be available under the MIT license, free for commercial usage. We are planning to sunset support for the 2022.12.X branch around Q1 2024. Until then, it will continue to receive quality and bug-fix updates. 
+
+The library does not require any license key. We trust our users, and therefore the process is simple. To disable license validation and turn off this exception, please configure an eligible license using the QuestPDF.Settings.License API, for example: 
+
+"QuestPDF.Settings.License = LicenseType.Community;" 
+
+Learn more on: https://www.questpdf.com/license/configuration.html 
+
+
+8/26/2024 12:55:34 PM There is already an open DataReader associated with this Connection which must be closed first.
+8/26/2024 1:12:31 PM Table should have at least one column. Please call the 'ColumnsDefinition' method to define columns.
+8/26/2024 2:02:29 PM Could not find specified column in results: receipt_number
+8/26/2024 11:29:54 PM Invalid attempt to Read when reader is closed.
+8/26/2024 11:32:57 PM Invalid attempt to Read when reader is closed.
+8/26/2024 11:35:22 PM Invalid attempt to Read when reader is closed.
+8/26/2024 11:54:25 PM Invalid attempt to Read when reader is closed.
+8/26/2024 11:56:41 PM Invalid attempt to Read when reader is closed.
+8/26/2024 11:57:58 PM Invalid attempt to Read when reader is closed.
+8/27/2024 11:41:02 AM There is already an open DataReader associated with this Connection which must be closed first. companies loop
+8/27/2024 11:41:02 AM There is already an open DataReader associated with this Connection which must be closed first. companies loop
+8/27/2024 2:55:43 PM The 'Page.Content' layer has already been defined. Please call this method only once.
+8/27/2024 6:24:39 PM Unable to cast object of type 'System.Int64' to type 'System.Int32'.
+8/30/2024 10:17:49 PM Connection must be valid and open.
+8/30/2024 10:19:23 PM Connection must be valid and open.
+8/30/2024 10:19:36 PM Connection must be valid and open.
+8/30/2024 10:19:38 PM Connection must be valid and open.
+8/30/2024 10:19:39 PM Connection must be valid and open.
+8/30/2024 10:19:41 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
+8/30/2024 10:19:46 PM Connection must be valid and open.
+8/30/2024 10:19:47 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
+8/30/2024 10:19:48 PM Connection must be valid and open.
+8/30/2024 10:19:50 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
+8/30/2024 10:19:51 PM Connection must be valid and open.
+8/30/2024 10:19:52 PM Connection must be valid and open.
+8/30/2024 10:19:52 PM Connection must be valid and open.
+8/30/2024 10:19:53 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
+8/30/2024 10:20:01 PM Connection must be valid and open.
+8/30/2024 10:20:02 PM Connection must be valid and open.
+8/30/2024 10:20:02 PM Connection must be valid and open.
+8/30/2024 10:20:04 PM Connection must be valid and open.
+8/30/2024 10:20:05 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
+8/30/2024 10:20:06 PM Connection must be valid and open.
+8/30/2024 10:20:06 PM Connection must be valid and open.
+8/30/2024 10:20:06 PM Connection must be valid and open.
+8/30/2024 10:20:07 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
+8/30/2024 10:20:07 PM Connection must be valid and open.
+8/30/2024 10:20:20 PM Connection must be valid and open.
+8/30/2024 10:20:20 PM Connection must be valid and open.
+8/30/2024 10:20:20 PM Connection must be valid and open.
+8/30/2024 10:20:21 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
+8/30/2024 10:20:23 PM Connection must be valid and open.
+8/30/2024 10:20:24 PM Connection must be valid and open.

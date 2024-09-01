@@ -47,10 +47,13 @@ namespace Wilkes_County_Insurance_App
 
         public PrintReceipt()
         {
+            // initializes the form
             InitializeComponent();
 
+            // initializes the UI
             initUI();
 
+            // initializes the entry fields and their corresponding strings
             entryFields = new System.Windows.Forms.Control[] { firstNameTextBox, lastNameTextBox, employeeComboBox, remitToComboBox, referenceTextBox, transactionDescriptionTextBox, paymentAmountTextBox };
             inputStrings = new string[] { "First Name", "Last Name", "User ID", "Remit To", "Reference", "Transaction Description", "Payment Amount" };
         }
@@ -62,6 +65,7 @@ namespace Wilkes_County_Insurance_App
 
         private void initUI()
         {
+            // initializes the UI
             fillEmployees();
             getDefaultEmployee();
             fillInsuranceCompanies();
@@ -91,6 +95,7 @@ namespace Wilkes_County_Insurance_App
 
         private void fillEmployees()
         {
+            // fills the employeeComboBox with the employees from the database
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
@@ -115,12 +120,14 @@ namespace Wilkes_County_Insurance_App
 
         private void getDefaultEmployee()
         {
+            // gets the default employee from the defaultuser file
             string[] defaultEmployee = File.ReadAllLines("defaultuser");
 
         }
 
         private void fillInsuranceCompanies()
         {
+            // fills the remitToComboBox with the insurance companies from the database
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
@@ -144,6 +151,8 @@ namespace Wilkes_County_Insurance_App
 
         private void printReceiptButton_Click(object sender, EventArgs e)
         {
+            // checks if any entry fields are empty
+
             List<string> emptyFields = new List<string>();
             for (int i = 0; i < entryFields.Length; i++)
             {
@@ -153,6 +162,7 @@ namespace Wilkes_County_Insurance_App
                 }
             }
 
+            /// DEPRECATED
             if (billPaymentWarningLabel.Visible == true || numbersOnlyLabel.Visible == true)
             {
                 MessageBox.Show("Please provide valid payment amount.");
@@ -167,6 +177,7 @@ namespace Wilkes_County_Insurance_App
                 }
                 if (emptyFields.Count > 0)
                 {
+                    // if any entry fields are empty, displays a message box with the empty fields
                     string message = "Please fill out the following fields: ";
                     foreach (string field in emptyFields)
                     {
@@ -181,7 +192,12 @@ namespace Wilkes_County_Insurance_App
                     getProvidedData();
                 }
                 QuestPDF.Settings.License = LicenseType.Community;
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+                /// Allowed the user to provide a path to save the PDF file
+                /// DEPRECATED
+                /// 
+
+                /*SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
                 saveFileDialog.FilterIndex = 2;
                 saveFileDialog.RestoreDirectory = true;
@@ -208,55 +224,34 @@ namespace Wilkes_County_Insurance_App
                     }
 
                     clearFields();
-                }
-            }
-
-            ///
-            /// REFACTORED
-            ///
-
-            // int result = getProvidedData();
-            /*if (result == 1)
-            {
-                QuestPDF.Settings.License = LicenseType.Community;
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
-                saveFileDialog.FilterIndex = 2;
-                saveFileDialog.RestoreDirectory = true;
-
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                }*/
+                createPDF();
+                try
                 {
-                    string path = saveFileDialog.FileName;
-                    Debug.WriteLine(path);
-                    createPDF(path);
-                    try
+                    if (editMode)
+                    {
+                        editExistingReceipt();
+                    }
+                    else
                     {
                         saveReceiptToDatabase();
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Error: {ex.Message}");
-                    }
                 }
-            }
-            else if (result == 0)
-            {
-                MessageBox.Show($"Payment Amount must be a valid decimal.");
-            }
-            else if (result == -1)
-            {
-                MessageBox.Show("Please select an employee.");
-            }
-            else
-            {
-                //MessageBox.Show("Please fill out all fields.");
-            }*/
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
 
+                clearFields();
+            }
+
+       
 
         }
 
         private void editExistingReceipt()
         {
+            // edits an existing receipt in the database
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
@@ -264,7 +259,7 @@ namespace Wilkes_County_Insurance_App
                 {
                     cmd.Connection.Open();
                 }
-                cmd.CommandText = $"UPDATE insurancedb.receipts SET received_from_first = '{receivedFromFirstName}', received_from_last = '{receivedFromLastName}', receipt_date = '{receiptDate.ToString("yyyy-MM-dd")}', receipt_time = '{receiptTime}', remit_to = '{remit_to}', reference = '{reference}', transaction_description = '{transactionDescription}', payment_method = '{paymentMethod}', payment_amount = {paymentAmount}, cash_paid = {amountTendered}, change_due = {changeDue}, employee_name = '{employeeName}' WHERE receipt_id = {receiptID};";
+                cmd.CommandText = $"UPDATE insurancedb.receipts SET received_from_first = '{receivedFromFirstName}', received_from_last = '{receivedFromLastName}', receipt_date = '{receiptDate.ToString("yyyy-MM-dd HH:mm:ss")}', receipt_time = '{receiptTime}', remit_to = '{remit_to}', reference = '{reference}', transaction_description = '{transactionDescription}', payment_method = '{paymentMethod}', payment_amount = {paymentAmount}, cash_paid = {amountTendered}, change_due = {changeDue}, employee_name = '{employeeName}' WHERE receipt_id = {receiptID};";
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -276,6 +271,7 @@ namespace Wilkes_County_Insurance_App
 
         private void clearFields()
         {
+            // clears all entry fields
             foreach (System.Windows.Forms.Control control in entryFields)
             {
                 control.Text = "";
@@ -288,6 +284,7 @@ namespace Wilkes_County_Insurance_App
 
         private void saveReceiptToDatabase()
         {
+            // saves the receipt data to the database
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
@@ -295,7 +292,7 @@ namespace Wilkes_County_Insurance_App
                 {
                     cmd.Connection.Open();
                 }
-                cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES ('{receivedFromFirstName}', '{receivedFromLastName}', '{receiptDate.ToString("yyyy-MM-dd")}', '{receiptTime}', '{remit_to}', '{reference}', '{transactionDescription}', '{paymentMethod}', {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";
+                cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES ('{receivedFromFirstName}', '{receivedFromLastName}', '{receiptDate.ToString("yyyy-MM-dd HH:mm:ss")}', '{receiptTime}', '{remit_to}', '{reference}', '{transactionDescription}', '{paymentMethod}', {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";
                 cmd.ExecuteNonQuery();
 
                 string cashDrawerScript = $"UPDATE cash_drawer SET receipt_item_total = receipt_item_total + 1, receipt_cash_amount = receipt_cash_amount + {paymentAmount} WHERE employee_name = '{employeeName}';";
@@ -311,6 +308,7 @@ namespace Wilkes_County_Insurance_App
 
         private void getProvidedData()
         {
+            // gets the data provided by the user
             if (editMode)
             {
                 receiptID = selectedReceiptID;
@@ -319,13 +317,13 @@ namespace Wilkes_County_Insurance_App
             {
                 receiptID = getReceiptID();
             }
+
+            // gets the data from the entry fields
             receivedFromFirstName = firstNameTextBox.Text;
             receivedFromLastName = lastNameTextBox.Text;
-            //receiptDate = DateTime.Now.ToString("MM/dd/yyyy");
-            //receiptTime = DateTime.Now.ToString("hh:mm:ss tt");
-            //receiptDate = receiptDatePicker.Value.ToString("MM/dd/yyyy");
+            
             receiptDate = receiptDatePicker.Value;
-            //receiptTime = DateTime.Now.ToString("hh:mm:ss tt");
+            
             receiptTime = receiptDatePicker.Value.ToString("hh:mm:ss tt");
 
             remit_to = remitToComboBox.SelectedItem.ToString();
@@ -362,16 +360,12 @@ namespace Wilkes_County_Insurance_App
             {
                 employeeName = employeeComboBox.SelectedItem.ToString();
             }
-            /*else
-            {
-                return -1;
-            }
-
-            return 1;*/
+            
         }
 
         private int getReceiptID()
         {
+            // gets the next available receipt ID
             int origionalReceiptID = 0;
             try
             {
@@ -391,8 +385,9 @@ namespace Wilkes_County_Insurance_App
             return origionalReceiptID += 1;
         }
 
-        private void createPDF(string path)
+        private void createPDF(string path="")
         {
+            // Create a new PDF document for a receipt
             var document = Document.Create(container =>
             {
                 container
@@ -428,7 +423,7 @@ namespace Wilkes_County_Insurance_App
                                 table.Cell().Row(2).Column(2).Element(BlockLeft).Text(receiptDate.ToString("MM/dd/yyyy")).FontFamily(Fonts.Consolas).FontSize(8);
 
                                 table.Cell().Row(3).Column(1).Element(BlockLeft).Text("Time:").FontFamily(Fonts.Consolas).FontSize(8);
-                                table.Cell().Row(3).Column(2).Element(BlockLeft).Text(receiptTime).FontFamily(Fonts.Consolas).FontSize(8);
+                                table.Cell().Row(3).Column(2).Element(BlockLeft).Text(receiptDate.ToString("hh:mm:ss tt")).FontFamily(Fonts.Consolas).FontSize(8);
 
                                 // Add right sections
                                 table.Cell().Row(1).Column(3).Element(BlockRight).Text("Receipt #:").FontFamily(Fonts.Consolas).FontSize(8);
@@ -527,31 +522,11 @@ namespace Wilkes_County_Insurance_App
                     });
             });
             document.GeneratePdfAndShow();
-            document.GeneratePdf(path);
+            //document.GeneratePdf(path);
         }
 
-        private void paymentMethodComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (paymentMethodComboBox.SelectedItem.ToString() == "Cash")
-            {
-                amountTenderedLabel.Visible = true;
-                amountTenderedTextBox.Visible = true;
-                changeDueLabel.Visible = true;
-                changeDueTextBox.Visible = true;
-            }
-            else
-            {
-                amountTenderedLabel.Visible = false;
-                amountTenderedTextBox.Visible = false;
-                changeDueLabel.Visible = false;
-                changeDueTextBox.Visible = false;
 
-                amountTenderedTextBox.Text = "";
-                changeDueTextBox.Text = "0.00";
-            }
-        }
-
-        private void amountTenderedTextBox_TextChanged(object sender, EventArgs e)
+        /*private void amountTenderedTextBox_TextChanged(object sender, EventArgs e) // DEPRECATED
         {
             changeDueCalc();
             if (numbersOnlyLabel.Visible == true)
@@ -562,9 +537,9 @@ namespace Wilkes_County_Insurance_App
             {
                 printReceiptButton.Enabled = true;
             }
-        }
+        }*/
 
-        private void changeDueCalc()
+        /*private void changeDueCalc() // DEPRECATED
         {
             try
             {
@@ -610,11 +585,32 @@ namespace Wilkes_County_Insurance_App
                     changeDueTextBox.Text = "0.00";
                 }
             }
+        }*/
+
+        private void calcNumber() // checks if the payment amount is a valid number
+        {
+            try
+            {
+                paymentAmount = Convert.ToDecimal(paymentAmountTextBox.Text);
+                billPaymentWarningLabel.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                if (paymentAmountTextBox.Text == "")
+                {
+                    billPaymentWarningLabel.Visible = false;
+                }
+                else
+                {
+                    billPaymentWarningLabel.Visible = true;
+                }
+            }
         }
 
         private void paymentAmountTextBox_TextChanged(object sender, EventArgs e)
         {
-            changeDueCalc();
+            // check if the payment amount is a valid number, if not disables the number and prints a warning
+            calcNumber();
             if (billPaymentWarningLabel.Visible == true)
             {
                 printReceiptButton.Enabled = false;
@@ -627,14 +623,17 @@ namespace Wilkes_County_Insurance_App
 
         private void clearFieldsButton_Click(object sender, EventArgs e)
         {
+            // clears all entry fields
             clearFields();
         }
 
         private void editExistingReceiptButton_Click(object sender, EventArgs e)
         {
+            // opens the EditReceipt form to select a receipt to edit
             EditReceipt editReceipt = new EditReceipt();
             editReceipt.ShowDialog();
 
+            // if a receipt is selected, fills the entry fields with the selected receipt's data
             selectedReceiptID = editReceipt.selectedReceiptID;
             if (selectedReceiptID != 0)
             {
@@ -643,20 +642,22 @@ namespace Wilkes_County_Insurance_App
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    // fills the entry fields with the selected receipt's data
                     receiptID = selectedReceiptID;
                     firstNameTextBox.Text = reader["received_from_first"].ToString();
                     lastNameTextBox.Text = reader["received_from_last"].ToString();
-                    string date = reader["receipt_date"].ToString();
-                    string time = reader["receipt_time"].ToString();    
-                    receiptDatePicker.Value = DateTime.Parse($"{date} {time}");
+                    DateTime date = DateTime.Parse(reader["receipt_date"].ToString()); // converts the string from the database to a DateTime object
+                    receiptDatePicker.Value = date;
                     remitToComboBox.SelectedItem = reader["remit_to"].ToString();
                     referenceTextBox.Text = reader["reference"].ToString();
                     transactionDescriptionTextBox.Text = reader["transaction_description"].ToString();
                     paymentAmountTextBox.Text = reader["payment_amount"].ToString();
                     employeeComboBox.SelectedItem = reader["employee_name"].ToString();
                 }
+                // closes the reader
                 reader.Close();
 
+                // sets the editMode to true and displays the editingReceiptLabel
                 editMode = true;
                 editingReceiptLabel.Visible = true;
             }

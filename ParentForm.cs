@@ -8,34 +8,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Linq;
 
 namespace Wilkes_County_Insurance_App
 {
     public partial class ParentForm : Form
     {
+        // Variables
         public string databaseInitFileName = "databaseInit.txt";
         public string defaultUserFileName = "defaultuser";
         public string errorFileName = "errorlog.log";
-        //public string[] databaseConfig;
         public MySqlConnection connection;
         public string connectionError;
-
-        Form1 form1 = new Form1();
-
         Button[] parentButtons;
+
         public ParentForm()
         {
             InitializeComponent();
 
-            parentButtons = new Button[] { homeButton, optionsButton, printReceiptButton, cashDrawerButton, reportsButton};
-            homeInit();
+            parentButtons = new Button[] { homeButton, optionsButton, printReceiptButton, reportsButton};
+            //homeInit();
             databaseInit();
             defaultUser();
             errorFile();
 
             connectToDatabase();
+
+            initUI();
         }
 
+        /// <summary>
+        /// Creates an error log file 
+        /// to store error information to if one does not exist
+        /// </summary>
         private void errorFile()
         {
             if (!File.Exists(errorFileName))
@@ -44,22 +49,40 @@ namespace Wilkes_County_Insurance_App
             }
         }
 
-        /*private void panel1_Paint(object sender, PaintEventArgs e)
+        /// <summary>
+        /// Initializes the UI of the parent form
+        /// </summary>
+        private void initUI()
         {
-            homeButton.Enabled = false;
+            // runs on startup of program, checks if any buttons have been selected, if not, defaults to home menu.
+            bool exists = parentButtons.Any(button => button.Enabled == false);
 
-            form1.TopLevel = false;
-            form1.AutoScroll = true;
-            form1.FormBorderStyle = FormBorderStyle.None;
-            panel1.Controls.Add(form1);
-            form1.Show();
-        }*/
+            if (exists)
+            {
+                buttonInit();
+            }
+            else
+            {
+                homeButton_Click(this, null);
+            }
 
+            cashDrawerButton.Visible = false;
+        }
+
+        
+        /// <summary>
+        /// Executes when the parent form is loaded
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ParentForm_Load(object sender, EventArgs e)
         {
             //connectToDatabase();
         }
 
+        /// <summary>
+        /// Connects to the database using the connection string stored in the databaseInit file
+        /// </summary>
         public void connectToDatabase()
         {
             string[] databaseConfig = File.ReadAllLines(databaseInitFileName);
@@ -83,6 +106,9 @@ namespace Wilkes_County_Insurance_App
             }
         }
 
+        /// <summary>
+        /// Creates a default database file to store database connection information
+        /// </summary>
         private void databaseInit()
         {
             if (File.Exists(databaseInitFileName))
@@ -95,6 +121,10 @@ namespace Wilkes_County_Insurance_App
             }
         }
 
+        /// <summary>
+        /// Creates a default user file to store user preference
+        /// for a default user on the machine if one does not exist
+        /// </summary>
         private void defaultUser()
         {
             if (File.Exists(defaultUserFileName))
@@ -107,8 +137,18 @@ namespace Wilkes_County_Insurance_App
             }
         }
 
+        /// <summary>
+        /// Moves to the options form when the button is clicked on the parent form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void optionsButton_Click(object sender, EventArgs e)
         {
+            /// *** IMPORTANT ***
+            /// Old method of validating if the user was allowed to access the options menu
+            /// has been replaced with a standard options menu that is always accessible
+            /// training will be done to ensure that users do not change settings that they are not supposed to
+            /// *** IMPORTANT ***
             /*ValidationForm validationForm = new ValidationForm();
             if (validationForm.ShowDialog() == DialogResult.OK)
             {
@@ -135,8 +175,14 @@ namespace Wilkes_County_Insurance_App
             optionsForm.Show();
         }
 
+        /// <summary>
+        /// Moves to the home form when the button is clicked on the parent form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void homeButton_Click(object sender, EventArgs e)
         {
+            Form1 form1 = new Form1(connection);
             buttonInit();
             homeButton.Enabled = false;
             clearPanel();
@@ -148,19 +194,10 @@ namespace Wilkes_County_Insurance_App
             form1.Show();
         }
 
-        public void returnHome()
-        {
-            buttonInit();
-            homeButton.Enabled = false;
-            clearPanel();
-
-            form1.TopLevel = false;
-            form1.AutoScroll = true;
-            form1.FormBorderStyle = FormBorderStyle.None;
-            panel1.Controls.Add(form1);
-            form1.Show();
-        }
-
+        
+        /// <summary>
+        /// Clears the panel of all controls
+        /// </summary>
         private void clearPanel()
         {
             foreach (Control control in panel1.Controls)
@@ -169,6 +206,9 @@ namespace Wilkes_County_Insurance_App
             }
         }
 
+        /// <summary>
+        /// Sets all buttons to enabled and clears the active control
+        /// </summary>
         private void buttonInit()
         {
             foreach (Button button in parentButtons)
@@ -178,18 +218,11 @@ namespace Wilkes_County_Insurance_App
             }
         }
 
-        private void homeInit()
-        {
-            homeButton.Enabled = false;
-            clearPanel();
-
-            form1.TopLevel = false;
-            form1.AutoScroll = true;
-            form1.FormBorderStyle = FormBorderStyle.None;
-            panel1.Controls.Add(form1);
-            form1.Show();
-        }
-
+        /// <summary>
+        /// Moves to the print receipt form when the button is clicked on the parent form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void printReceiptButton_Click(object sender, EventArgs e)
         {
             PrintReceipt printReceipt = new PrintReceipt();
@@ -204,7 +237,12 @@ namespace Wilkes_County_Insurance_App
             printReceipt.Show();
         }
 
-        private void cashDrawerButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Moves to the cash drawer form when the button is clicked on the parent form DEPRECATED
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cashDrawerButton_Click(object sender, EventArgs e) // Cash Drawer Button
         {
             CashDrawer cashDrawer = new CashDrawer();
             buttonInit();
@@ -218,6 +256,11 @@ namespace Wilkes_County_Insurance_App
             cashDrawer.Show();
         }
 
+        /// <summary>
+        /// Moves to the reports form when the button is clicked on the parent form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void reportsButton_Click(object sender, EventArgs e)
         {
             ReportsForm reportsForm = new ReportsForm();

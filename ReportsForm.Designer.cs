@@ -37,9 +37,9 @@
             // 
             printTotalReceiptsButton.Location = new Point(12, 12);
             printTotalReceiptsButton.Name = "printTotalReceiptsButton";
-            printTotalReceiptsButton.Size = new Size(97, 53);
-            printTotalReceiptsButton.TabIndex = 0;
-            printTotalReceiptsButton.Text = "Print Total Receipts Report";
+            printTotalReceiptsButton.Size = new Size(122, 53);
+            printTotalReceiptsButton.TabIndex = 1;
+            printTotalReceiptsButton.Text = "Print Daily Receipts Report";
             printTotalReceiptsButton.UseVisualStyleBackColor = true;
             printTotalReceiptsButton.Click += printTotalReceiptsButton_Click;
             // 
@@ -47,9 +47,9 @@
             // 
             button2.Location = new Point(12, 71);
             button2.Name = "button2";
-            button2.Size = new Size(97, 53);
-            button2.TabIndex = 1;
-            button2.Text = "Print Receipts By Company";
+            button2.Size = new Size(122, 53);
+            button2.TabIndex = 2;
+            button2.Text = "Print Company Receipt Reports";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -57,9 +57,9 @@
             // 
             printCashDrawerTotalsButton.Location = new Point(12, 130);
             printCashDrawerTotalsButton.Name = "printCashDrawerTotalsButton";
-            printCashDrawerTotalsButton.Size = new Size(97, 53);
-            printCashDrawerTotalsButton.TabIndex = 2;
-            printCashDrawerTotalsButton.Text = "Print Cash Drawer Totals";
+            printCashDrawerTotalsButton.Size = new Size(122, 53);
+            printCashDrawerTotalsButton.TabIndex = 3;
+            printCashDrawerTotalsButton.Text = "Print Cash Drawer Totals / Receipts per User Report";
             printCashDrawerTotalsButton.UseVisualStyleBackColor = true;
             printCashDrawerTotalsButton.Click += printCashDrawerTotalsButton_Click;
             // 

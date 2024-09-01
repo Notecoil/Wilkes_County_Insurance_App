@@ -219,6 +219,7 @@ namespace Wilkes_County_Insurance_App
         private void userComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             File.WriteAllBytes(defaultUserFileName, Encoding.ASCII.GetBytes(userComboBox.SelectedItem.ToString()));
+
         }
     }
 }

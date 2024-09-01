@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             optionsButton = new Button();
             homeButton = new Button();
@@ -35,6 +36,7 @@
             cashDrawerButton = new Button();
             pictureBox1 = new PictureBox();
             reportsButton = new Button();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -56,6 +58,7 @@
             optionsButton.Name = "optionsButton";
             optionsButton.Size = new Size(62, 48);
             optionsButton.TabIndex = 4;
+            toolTip1.SetToolTip(optionsButton, "Program settings");
             optionsButton.UseVisualStyleBackColor = true;
             optionsButton.Click += optionsButton_Click;
             // 
@@ -66,6 +69,7 @@
             homeButton.Name = "homeButton";
             homeButton.Size = new Size(62, 48);
             homeButton.TabIndex = 0;
+            toolTip1.SetToolTip(homeButton, "Home menu");
             homeButton.UseVisualStyleBackColor = true;
             homeButton.Click += homeButton_Click;
             // 
@@ -76,16 +80,18 @@
             printReceiptButton.Size = new Size(62, 48);
             printReceiptButton.TabIndex = 1;
             printReceiptButton.Text = "Print Receipt";
+            toolTip1.SetToolTip(printReceiptButton, "Enter information to print receipts.");
             printReceiptButton.UseVisualStyleBackColor = true;
             printReceiptButton.Click += printReceiptButton_Click;
             // 
             // cashDrawerButton
             // 
-            cashDrawerButton.Location = new Point(12, 297);
+            cashDrawerButton.Enabled = false;
+            cashDrawerButton.Location = new Point(12, 351);
             cashDrawerButton.Name = "cashDrawerButton";
             cashDrawerButton.Size = new Size(62, 48);
             cashDrawerButton.TabIndex = 2;
-            cashDrawerButton.Text = "Cash Drawer";
+            cashDrawerButton.Text = "UNUSED";
             cashDrawerButton.UseVisualStyleBackColor = true;
             cashDrawerButton.Click += cashDrawerButton_Click;
             // 
@@ -100,11 +106,12 @@
             // 
             // reportsButton
             // 
-            reportsButton.Location = new Point(12, 351);
+            reportsButton.Location = new Point(12, 297);
             reportsButton.Name = "reportsButton";
             reportsButton.Size = new Size(62, 48);
-            reportsButton.TabIndex = 6;
+            reportsButton.TabIndex = 3;
             reportsButton.Text = "Reports";
+            toolTip1.SetToolTip(reportsButton, "Page to printout receipt reports.");
             reportsButton.UseVisualStyleBackColor = true;
             reportsButton.Click += reportsButton_Click;
             // 
@@ -137,5 +144,6 @@
         private Button cashDrawerButton;
         private PictureBox pictureBox1;
         private Button reportsButton;
+        private ToolTip toolTip1;
     }
 }

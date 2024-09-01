@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             firstNameTextBox = new TextBox();
             lastNameTextBox = new TextBox();
@@ -64,6 +65,7 @@
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
             pictureBox7 = new PictureBox();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -128,7 +130,7 @@
             receiptDatePicker.Location = new Point(180, 97);
             receiptDatePicker.Name = "receiptDatePicker";
             receiptDatePicker.Size = new Size(200, 23);
-            receiptDatePicker.TabIndex = 6;
+            receiptDatePicker.TabIndex = 3;
             // 
             // label5
             // 
@@ -147,7 +149,7 @@
             employeeComboBox.Location = new Point(180, 143);
             employeeComboBox.Name = "employeeComboBox";
             employeeComboBox.Size = new Size(200, 23);
-            employeeComboBox.TabIndex = 8;
+            employeeComboBox.TabIndex = 4;
             employeeComboBox.SelectedIndexChanged += employeeComboBox_SelectedIndexChanged;
             // 
             // label6
@@ -173,14 +175,14 @@
             referenceTextBox.Location = new Point(180, 239);
             referenceTextBox.Name = "referenceTextBox";
             referenceTextBox.Size = new Size(200, 23);
-            referenceTextBox.TabIndex = 12;
+            referenceTextBox.TabIndex = 6;
             // 
             // transactionDescriptionTextBox
             // 
             transactionDescriptionTextBox.Location = new Point(180, 281);
             transactionDescriptionTextBox.Name = "transactionDescriptionTextBox";
             transactionDescriptionTextBox.Size = new Size(200, 23);
-            transactionDescriptionTextBox.TabIndex = 14;
+            transactionDescriptionTextBox.TabIndex = 7;
             // 
             // label8
             // 
@@ -206,7 +208,7 @@
             paymentAmountTextBox.Location = new Point(180, 319);
             paymentAmountTextBox.Name = "paymentAmountTextBox";
             paymentAmountTextBox.Size = new Size(200, 23);
-            paymentAmountTextBox.TabIndex = 18;
+            paymentAmountTextBox.TabIndex = 8;
             paymentAmountTextBox.TextChanged += paymentAmountTextBox_TextChanged;
             // 
             // label10
@@ -223,8 +225,9 @@
             printReceiptButton.Location = new Point(281, 360);
             printReceiptButton.Name = "printReceiptButton";
             printReceiptButton.Size = new Size(99, 23);
-            printReceiptButton.TabIndex = 19;
+            printReceiptButton.TabIndex = 9;
             printReceiptButton.Text = "Print Receipt";
+            toolTip1.SetToolTip(printReceiptButton, "Prints receipt with information currently provided.");
             printReceiptButton.UseVisualStyleBackColor = true;
             printReceiptButton.Click += printReceiptButton_Click;
             // 
@@ -238,7 +241,6 @@
             paymentMethodComboBox.Size = new Size(200, 23);
             paymentMethodComboBox.TabIndex = 20;
             paymentMethodComboBox.Visible = false;
-            paymentMethodComboBox.SelectedIndexChanged += paymentMethodComboBox_SelectedIndexChanged;
             // 
             // amountTenderedLabel
             // 
@@ -257,7 +259,6 @@
             amountTenderedTextBox.Size = new Size(100, 23);
             amountTenderedTextBox.TabIndex = 22;
             amountTenderedTextBox.Visible = false;
-            amountTenderedTextBox.TextChanged += amountTenderedTextBox_TextChanged;
             // 
             // changeDueLabel
             // 
@@ -307,15 +308,16 @@
             remitToComboBox.Location = new Point(180, 191);
             remitToComboBox.Name = "remitToComboBox";
             remitToComboBox.Size = new Size(200, 23);
-            remitToComboBox.TabIndex = 9;
+            remitToComboBox.TabIndex = 5;
             // 
             // clearFieldsButton
             // 
             clearFieldsButton.Location = new Point(281, 389);
             clearFieldsButton.Name = "clearFieldsButton";
             clearFieldsButton.Size = new Size(99, 23);
-            clearFieldsButton.TabIndex = 28;
+            clearFieldsButton.TabIndex = 10;
             clearFieldsButton.Text = "Clear Fields";
+            toolTip1.SetToolTip(clearFieldsButton, "Clear the fields on screen.");
             clearFieldsButton.UseVisualStyleBackColor = true;
             clearFieldsButton.Click += clearFieldsButton_Click;
             // 
@@ -324,8 +326,9 @@
             editExistingReceiptButton.Location = new Point(281, 418);
             editExistingReceiptButton.Name = "editExistingReceiptButton";
             editExistingReceiptButton.Size = new Size(100, 39);
-            editExistingReceiptButton.TabIndex = 29;
+            editExistingReceiptButton.TabIndex = 11;
             editExistingReceiptButton.Text = "Edit Existing Receipt";
+            toolTip1.SetToolTip(editExistingReceiptButton, "Select a previous receipt to edit \r\nif an error was made.");
             editExistingReceiptButton.UseVisualStyleBackColor = true;
             editExistingReceiptButton.Click += editExistingReceiptButton_Click;
             // 
@@ -347,6 +350,7 @@
             pictureBox1.Size = new Size(18, 15);
             pictureBox1.TabIndex = 31;
             pictureBox1.TabStop = false;
+            toolTip1.SetToolTip(pictureBox1, "The full name \r\nof the client for the receipt.");
             // 
             // pictureBox2
             // 
@@ -356,6 +360,7 @@
             pictureBox2.Size = new Size(18, 15);
             pictureBox2.TabIndex = 32;
             pictureBox2.TabStop = false;
+            toolTip1.SetToolTip(pictureBox2, "The date of the receipt.\r\nStarts as the current date of today.");
             // 
             // pictureBox3
             // 
@@ -365,6 +370,7 @@
             pictureBox3.Size = new Size(18, 15);
             pictureBox3.TabIndex = 33;
             pictureBox3.TabStop = false;
+            toolTip1.SetToolTip(pictureBox3, "The name of the user for the program.");
             // 
             // pictureBox4
             // 
@@ -374,6 +380,7 @@
             pictureBox4.Size = new Size(18, 15);
             pictureBox4.TabIndex = 34;
             pictureBox4.TabStop = false;
+            toolTip1.SetToolTip(pictureBox4, "Insurance company the cash receipt\r\nis being written for.");
             // 
             // pictureBox5
             // 
@@ -383,6 +390,7 @@
             pictureBox5.Size = new Size(18, 15);
             pictureBox5.TabIndex = 35;
             pictureBox5.TabStop = false;
+            toolTip1.SetToolTip(pictureBox5, "Purpose of the transaction (Auto, Bike, etc).\r\n");
             // 
             // pictureBox6
             // 
@@ -392,6 +400,7 @@
             pictureBox6.Size = new Size(18, 15);
             pictureBox6.TabIndex = 36;
             pictureBox6.TabStop = false;
+            toolTip1.SetToolTip(pictureBox6, "Description for the receipt payment.");
             // 
             // pictureBox7
             // 
@@ -401,6 +410,7 @@
             pictureBox7.Size = new Size(18, 15);
             pictureBox7.TabIndex = 37;
             pictureBox7.TabStop = false;
+            toolTip1.SetToolTip(pictureBox7, "Amount paid on the cash receipt.");
             // 
             // PrintReceipt
             // 
@@ -495,5 +505,6 @@
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;
+        private ToolTip toolTip1;
     }
 }

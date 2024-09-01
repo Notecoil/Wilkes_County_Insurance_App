@@ -33,9 +33,7 @@
             label2 = new Label();
             endDatePicker = new DateTimePicker();
             printReportButton = new Button();
-            companyNameLabel = new Label();
-            companyComboBox = new ComboBox();
-            selectWarningLabel = new Label();
+            backButton = new Button();
             SuspendLayout();
             // 
             // startDatePicker
@@ -74,7 +72,7 @@
             // 
             // printReportButton
             // 
-            printReportButton.Location = new Point(340, 198);
+            printReportButton.Location = new Point(340, 152);
             printReportButton.Name = "printReportButton";
             printReportButton.Size = new Size(75, 38);
             printReportButton.TabIndex = 4;
@@ -82,45 +80,22 @@
             printReportButton.UseVisualStyleBackColor = true;
             printReportButton.Click += button1_Click;
             // 
-            // companyNameLabel
+            // backButton
             // 
-            companyNameLabel.AutoSize = true;
-            companyNameLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            companyNameLabel.Location = new Point(12, 150);
-            companyNameLabel.Name = "companyNameLabel";
-            companyNameLabel.Size = new Size(147, 25);
-            companyNameLabel.TabIndex = 5;
-            companyNameLabel.Text = "Company Name";
-            // 
-            // companyComboBox
-            // 
-            companyComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            companyComboBox.FormattingEnabled = true;
-            companyComboBox.Items.AddRange(new object[] { "" });
-            companyComboBox.Location = new Point(215, 155);
-            companyComboBox.Name = "companyComboBox";
-            companyComboBox.Size = new Size(200, 23);
-            companyComboBox.TabIndex = 6;
-            companyComboBox.SelectedIndexChanged += companyComboBox_SelectedIndexChanged;
-            // 
-            // selectWarningLabel
-            // 
-            selectWarningLabel.AutoSize = true;
-            selectWarningLabel.ForeColor = Color.Red;
-            selectWarningLabel.Location = new Point(421, 158);
-            selectWarningLabel.Name = "selectWarningLabel";
-            selectWarningLabel.Size = new Size(163, 15);
-            selectWarningLabel.TabIndex = 7;
-            selectWarningLabel.Text = "Select an Insurancy Company";
+            backButton.Location = new Point(12, 12);
+            backButton.Name = "backButton";
+            backButton.Size = new Size(75, 23);
+            backButton.TabIndex = 8;
+            backButton.Text = "Back";
+            backButton.UseVisualStyleBackColor = true;
+            backButton.Click += backButton_Click;
             // 
             // DateRangeReport
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(selectWarningLabel);
-            Controls.Add(companyComboBox);
-            Controls.Add(companyNameLabel);
+            Controls.Add(backButton);
             Controls.Add(printReportButton);
             Controls.Add(endDatePicker);
             Controls.Add(label2);
@@ -140,8 +115,6 @@
         private Label label2;
         private DateTimePicker endDatePicker;
         private Button printReportButton;
-        private Label companyNameLabel;
-        private ComboBox companyComboBox;
-        private Label selectWarningLabel;
+        private Button backButton;
     }
 }
