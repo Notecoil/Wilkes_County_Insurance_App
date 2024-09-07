@@ -295,9 +295,13 @@ namespace Wilkes_County_Insurance_App
                 cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES ('{receivedFromFirstName}', '{receivedFromLastName}', '{receiptDate.ToString("yyyy-MM-dd HH:mm:ss")}', '{receiptTime}', '{remit_to}', '{reference}', '{transactionDescription}', '{paymentMethod}', {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";
                 cmd.ExecuteNonQuery();
 
-                string cashDrawerScript = $"UPDATE cash_drawer SET receipt_item_total = receipt_item_total + 1, receipt_cash_amount = receipt_cash_amount + {paymentAmount} WHERE employee_name = '{employeeName}';";
+                /// DEPRECATED
+                /// Previously updated the cash drawer with the payment amount
+                /// But since the cash drawer is no longer in use, this is no longer needed
+                /// DEPRECATED
+                /*string cashDrawerScript = $"UPDATE cash_drawer SET receipt_item_total = receipt_item_total + 1, receipt_cash_amount = receipt_cash_amount + {paymentAmount} WHERE employee_name = '{employeeName}';";
                 cmd.CommandText = cashDrawerScript;
-                cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();*/
             }
             catch (Exception ex)
             {
@@ -363,6 +367,11 @@ namespace Wilkes_County_Insurance_App
             
         }
 
+        /// <summary>
+        /// gets and returns the next available receipt_id 
+        ///
+        /// </summary>
+        /// <returns></returns>
         private int getReceiptID()
         {
             // gets the next available receipt ID
@@ -385,6 +394,10 @@ namespace Wilkes_County_Insurance_App
             return origionalReceiptID += 1;
         }
 
+        /// <summary>
+        /// Creates a PDF receipt using a set of data provided by the user
+        /// </summary>
+        /// <param name="path"></param>
         private void createPDF(string path="")
         {
             // Create a new PDF document for a receipt

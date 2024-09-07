@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\parentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:parentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\printreceipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:printreceipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\daterangereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:daterangereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\daterangereport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:daterangereport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|c:\\users\\jre\\source\\repos\\wilkes_county_insurance_app\\daterangereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:daterangereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\printreceipt.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:printreceipt.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\printreceipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:printreceipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\parentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:parentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\daterangereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:daterangereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,16 +19,44 @@
       "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|c:\\users\\jre\\source\\repos\\wilkes_county_insurance_app\\parentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:parentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\cashdrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:cashdrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\printreceipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:printreceipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\optionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:optionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\parentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:parentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\daterangereport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:daterangereport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\daterangereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:daterangereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\printreceipt.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:printreceipt.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\optionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:optionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\reportsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:reportsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\optionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:optionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\reportsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -73,10 +77,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
       "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\cashdrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:cashdrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\editreceipt.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -106,37 +106,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DateRangeReport.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.Designer.cs",
-              "RelativeDocumentMoniker": "DateRangeReport.Designer.cs",
-              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.Designer.cs",
-              "RelativeToolTip": "DateRangeReport.Designer.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwFIAAAAAAAAA",
+              "DocumentIndex": 7,
+              "Title": "OptionsForm.cs",
+              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\OptionsForm.cs",
+              "RelativeDocumentMoniker": "OptionsForm.cs",
+              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\OptionsForm.cs",
+              "RelativeToolTip": "OptionsForm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T20:17:28.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T03:44:51.319Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DateRangeReport.cs",
-              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.cs",
-              "RelativeDocumentMoniker": "DateRangeReport.cs",
-              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.cs",
-              "RelativeToolTip": "DateRangeReport.cs",
-              "ViewState": "AQIAAMQBAAAAAAAAAAAuwB4AAAAYAAAA",
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAkwCwAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-18T02:25:38.61Z",
+              "WhenOpened": "2024-08-31T01:27:59.089Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "CashDrawer.cs",
+              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\CashDrawer.cs",
+              "RelativeDocumentMoniker": "CashDrawer.cs",
+              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\CashDrawer.cs",
+              "RelativeToolTip": "CashDrawer.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAADAAAACSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T01:44:31.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ParentForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\ParentForm.cs",
+              "RelativeDocumentMoniker": "ParentForm.cs",
+              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\ParentForm.cs [Design]",
+              "RelativeToolTip": "ParentForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T05:32:59.774Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "PrintReceipt.Designer.cs",
               "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\PrintReceipt.Designer.cs",
               "RelativeDocumentMoniker": "PrintReceipt.Designer.cs",
@@ -149,45 +172,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ParentForm.cs",
-              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\ParentForm.cs",
-              "RelativeDocumentMoniker": "ParentForm.cs",
-              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\ParentForm.cs",
-              "RelativeToolTip": "ParentForm.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAwwBcAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T05:34:34.534Z",
+              "WhenOpened": "2024-08-01T01:53:10.647Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DateRangeReport.cs",
+              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.cs",
+              "RelativeDocumentMoniker": "DateRangeReport.cs",
+              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.cs",
+              "RelativeToolTip": "DateRangeReport.cs",
+              "ViewState": "AQIAAPEAAAAAAAAAAAAcwPkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T02:25:38.61Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "PrintReceipt.cs",
               "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\PrintReceipt.cs",
               "RelativeDocumentMoniker": "PrintReceipt.cs",
               "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\PrintReceipt.cs",
               "RelativeToolTip": "PrintReceipt.cs",
-              "ViewState": "AQIAAF8BAAAAAAAAAAAkwDcAAABLAAAA",
+              "ViewState": "AQIAAPIAAAAAAAAAAAAwwPQAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-26T01:52:41.331Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DateRangeReport.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.cs",
-              "RelativeDocumentMoniker": "DateRangeReport.cs",
-              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.cs [Design]",
-              "RelativeToolTip": "DateRangeReport.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-18T02:24:55.09Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "PrintReceipt.cs [Design]",
               "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\PrintReceipt.cs",
               "RelativeDocumentMoniker": "PrintReceipt.cs",
@@ -199,19 +222,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "OptionsForm.cs",
-              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\OptionsForm.cs",
-              "RelativeDocumentMoniker": "OptionsForm.cs",
-              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\OptionsForm.cs",
-              "RelativeToolTip": "OptionsForm.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAN0AAAAAAAAA",
+              "DocumentIndex": 10,
+              "Title": "DateRangeReport.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.cs",
+              "RelativeDocumentMoniker": "DateRangeReport.cs",
+              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.cs [Design]",
+              "RelativeToolTip": "DateRangeReport.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T03:44:51.319Z"
+              "WhenOpened": "2024-08-18T02:24:55.09Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 8,
+              "Title": "ParentForm.cs",
+              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\ParentForm.cs",
+              "RelativeDocumentMoniker": "ParentForm.cs",
+              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\ParentForm.cs",
+              "RelativeToolTip": "ParentForm.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAcwBEAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T05:34:34.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DateRangeReport.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.Designer.cs",
+              "RelativeDocumentMoniker": "DateRangeReport.Designer.cs",
+              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.Designer.cs",
+              "RelativeToolTip": "DateRangeReport.Designer.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwFIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T20:17:28.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "ReportsForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\ReportsForm.cs",
               "RelativeDocumentMoniker": "ReportsForm.cs",
@@ -222,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "OptionsForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\OptionsForm.cs",
               "RelativeDocumentMoniker": "OptionsForm.cs",
@@ -233,42 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ParentForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\ParentForm.cs",
-              "RelativeDocumentMoniker": "ParentForm.cs",
-              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\ParentForm.cs [Design]",
-              "RelativeToolTip": "ParentForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T05:32:59.774Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T01:53:10.647Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAArwDwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T01:27:59.089Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "ReportsForm.cs",
               "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\ReportsForm.cs",
               "RelativeDocumentMoniker": "ReportsForm.cs",
@@ -280,7 +294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "EditReceipt.cs",
               "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\EditReceipt.cs",
               "RelativeDocumentMoniker": "EditReceipt.cs",
@@ -292,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "EditReceipt.cs [Design]",
               "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\EditReceipt.cs",
               "RelativeDocumentMoniker": "EditReceipt.cs",
@@ -303,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "OptionsForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\OptionsForm.Designer.cs",
               "RelativeDocumentMoniker": "OptionsForm.Designer.cs",
@@ -315,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Resources.resx",
               "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\Properties\\Resources.resx",
               "RelativeDocumentMoniker": "Properties\\Resources.resx",
@@ -323,18 +337,6 @@
               "RelativeToolTip": "Properties\\Resources.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
               "WhenOpened": "2024-08-09T23:30:50.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CashDrawer.cs",
-              "DocumentMoniker": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\CashDrawer.cs",
-              "RelativeDocumentMoniker": "CashDrawer.cs",
-              "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\CashDrawer.cs",
-              "RelativeToolTip": "CashDrawer.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAASwEQAAACtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T01:44:31.359Z"
             },
             {
               "$type": "Document",
@@ -380,7 +382,8 @@
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAxwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T01:53:05.938Z"
+              "WhenOpened": "2024-08-01T01:53:05.938Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

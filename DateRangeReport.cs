@@ -247,8 +247,9 @@ namespace Wilkes_County_Insurance_App
 
                             }); // PAGE END
                     }); // DOCUMENT END
-                    document.GeneratePdfAndShow();
                     this.Close();
+                    document.GeneratePdfAndShow();
+                    
                 }
                 else
                 {
@@ -297,8 +298,9 @@ namespace Wilkes_County_Insurance_App
                     }
                     // merge all reports
                     var document = Document.Merge(reports);
-                    document.GeneratePdfAndShow();
                     this.Close();
+                    document.GeneratePdfAndShow();
+                    
                 }
                 else
                 {
@@ -560,8 +562,8 @@ namespace Wilkes_County_Insurance_App
                                 }); // PAGE CONTENT END
                             }); // PAGE END
                     }); // DOCUMENT END
-                    document.GeneratePdfAndShow();
                     this.Close();
+                    document.GeneratePdfAndShow();
                 }
                 else
                 {

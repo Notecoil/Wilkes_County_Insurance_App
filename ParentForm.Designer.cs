@@ -126,7 +126,7 @@
             Controls.Add(homeButton);
             Controls.Add(optionsButton);
             Controls.Add(panel1);
-            MinimumSize = new Size(640, 500);
+            MinimumSize = new Size(700, 560);
             Name = "ParentForm";
             Text = "Wilkes County Insurance Agency";
             Load += ParentForm_Load;

@@ -14,7 +14,7 @@ namespace Wilkes_County_Insurance_App
 {
     public partial class OptionsForm : Form
     {
-        public string fileName = "databaseInit.txt";
+        public string fileName = "databaseInit";
         public string defaultUserFileName = "defaultuser";
         
         public string server;

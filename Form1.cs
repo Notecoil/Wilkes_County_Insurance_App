@@ -42,8 +42,9 @@ namespace Wilkes_County_Insurance_App
             defaultUser = Encoding.ASCII.GetString(File.ReadAllBytes(defaultUserFileName));
 
             welcomeLabel.Text = $"Welcome, {defaultUser}!";
+            receiptsTodayLabel.Visible = false;
 
-            initAnalytics();
+            //initAnalytics();
         }
 
         private void initAnalytics()

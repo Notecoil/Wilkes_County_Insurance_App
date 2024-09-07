@@ -15,7 +15,7 @@ namespace Wilkes_County_Insurance_App
     public partial class ParentForm : Form
     {
         // Variables
-        public string databaseInitFileName = "databaseInit.txt";
+        public string databaseInitFileName = "databaseInit";
         public string defaultUserFileName = "defaultuser";
         public string errorFileName = "errorlog.log";
         public MySqlConnection connection;
