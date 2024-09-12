@@ -306,7 +306,7 @@ namespace Wilkes_County_Insurance_App
                 {
                     MessageBox.Show("No receipts found for the selected date range");
                 }
-                //reader.Close();
+                reader.Close();
             }
             catch (Exception ex)
             {

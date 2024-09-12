@@ -23,7 +23,7 @@ namespace Wilkes_County_Insurance_App
         string defaultUserFileName = "defaultuser";
         string defaultUser = "";
 
-        MySqlConnection connection;
+        //MySqlConnection connection;
 
         //ParentForm parentForm = new ParentForm();
 
@@ -32,7 +32,7 @@ namespace Wilkes_County_Insurance_App
         {
             InitializeComponent();
 
-            this.connection = connection;
+            //this.connection = connection;
 
             initUI();
         }
@@ -47,7 +47,7 @@ namespace Wilkes_County_Insurance_App
             //initAnalytics();
         }
 
-        private void initAnalytics()
+        /*private void initAnalytics()
         {
             string startDateTime = DateTime.Now.ToString("yyyy-MM-dd 00:00:00");
             string endDateTime = DateTime.Now.ToString("yyyy-MM-dd 23:59:59");
@@ -69,7 +69,7 @@ namespace Wilkes_County_Insurance_App
                 File.AppendAllLines("errorlog.log", new string[] { $"{DateTime.Now} {ex.Message}" });
                 //MessageBox.Show($"Error: Couldn't connect to the database.\nTry restarting the program or your computer.\nIf the issue still persists contact support.");
             }
-        }
+        }*/
 
         
         private void optionsButton_Click(object sender, EventArgs e)

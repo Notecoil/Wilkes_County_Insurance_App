@@ -55,6 +55,7 @@ namespace Wilkes_County_Insurance_App
                 receiptDataView.Columns[5].HeaderText = "Transaction Description";
                 receiptDataView.Columns[6].HeaderText = "Payment Amount";
                 receiptDataView.Columns[7].HeaderText = "Employee Name";
+
             }
             catch (Exception ex)
             {
@@ -70,7 +71,8 @@ namespace Wilkes_County_Insurance_App
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
-                cmd.CommandText = "SELECT receipt_id, CONCAT(received_from_first, ' ', received_from_last) AS name, receipt_date, remit_to, reference, transaction_description, payment_amount, employee_name FROM receipts WHERE CONCAT(received_from_first, ' ', received_from_last) LIKE '%" + textBox1.Text + "%';";
+                cmd.CommandText = $"SELECT receipt_id, CONCAT(received_from_first, ' ', received_from_last) AS name, receipt_date, remit_to, reference, transaction_description, payment_amount, employee_name FROM receipts WHERE CONCAT(received_from_first, ' ', received_from_last) LIKE @name;";
+                cmd.Parameters.AddWithValue("@name", "%" + textBox1.Text + "%");
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 DataTable table = new DataTable();
@@ -81,8 +83,8 @@ namespace Wilkes_County_Insurance_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {parentForm.connectionError}");
-                File.AppendAllLines("errorlog.log", new string[] { $"{DateTime.Now} {parentForm.connectionError}" });
+                //MessageBox.Show($"Error: {parentForm.connectionError}");
+                File.AppendAllLines("errorlog.log", new string[] { $"{DateTime.Now} {ex.Message}" });
             }
 
 

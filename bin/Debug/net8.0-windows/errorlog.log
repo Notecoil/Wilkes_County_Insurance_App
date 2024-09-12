@@ -1,210 +1,26 @@
-8/9/2024 2:27:23 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.OptionsForm.populateUsers() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\OptionsForm.cs:line 72
-8/9/2024 2:29:25 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.OptionsForm.populateUsers() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\OptionsForm.cs:line 72
-8/9/2024 2:29:29 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.OptionsForm.populateUsers() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\OptionsForm.cs:line 72
-8/9/2024 2:33:06 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
-8/9/2024 2:33:52 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.PrintReceipt.fillEmployees() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 96
-8/9/2024 2:33:52 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.PrintReceipt.fillInsuranceCompanies() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 126
-8/9/2024 2:33:52 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
-8/9/2024 2:35:20 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.PrintReceipt.fillEmployees() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 97
-8/9/2024 2:35:20 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.PrintReceipt.fillInsuranceCompanies() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 127
-8/9/2024 2:36:21 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
-8/9/2024 2:37:25 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
-8/9/2024 2:38:20 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.PrintReceipt.fillEmployees() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 96
-8/9/2024 2:38:20 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.PrintReceipt.fillInsuranceCompanies() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 126
-8/9/2024 2:38:20 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
-8/9/2024 2:38:22 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
-8/9/2024 2:38:46 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.PrintReceipt.fillEmployees() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 97
-8/9/2024 2:38:46 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.PrintReceipt.fillInsuranceCompanies() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 127
-8/9/2024 2:38:47 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
-8/9/2024 2:38:54 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic11' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic11'@'DESKTOP-LACU1DD' (using password: YES)
-8/9/2024 2:39:00 PM System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at Wilkes_County_Insurance_App.OptionsForm.populateUsers() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\OptionsForm.cs:line 72
-8/9/2024 5:26:28 PM Connection must be valid and open.
-8/9/2024 5:26:28 PM Connection must be valid and open.
-8/9/2024 5:26:34 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic1' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic1'@'DESKTOP-LACU1DD' (using password: YES)
-8/9/2024 5:26:38 PM Authentication to host 'DESKTOP-LACU1DD' for user 'WCIABasic1' using method 'mysql_native_password' failed with message: Access denied for user 'WCIABasic1'@'DESKTOP-LACU1DD' (using password: YES)
-8/9/2024 5:27:12 PM Connection must be valid and open.
-8/9/2024 5:27:31 PM Connection must be valid and open.
-8/9/2024 5:30:10 PM Connection must be valid and open.
-8/10/2024 2:20:07 PM String '08/10/2024' was not recognized as a valid DateTime.
-8/10/2024 2:21:17 PM String '08/10/2024' was not recognized as a valid DateTime.
-8/10/2024 2:22:06 PM String '08/10/2024' was not recognized as a valid DateTime.
-8/10/2024 3:20:20 PM 
-8/10/2024 5:18:13 PM Fatal error encountered during command execution.
-8/10/2024 5:18:16 PM Connection must be valid and open.
-8/10/2024 5:18:53 PM Connection must be valid and open.
-8/10/2024 5:18:55 PM Connection must be valid and open.
-8/10/2024 5:41:34 PM Fatal error encountered during command execution.
-8/10/2024 5:42:42 PM Fatal error encountered during command execution.
-8/11/2024 11:27:52 AM You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dasdd', '2024-08-11', '11:27:50 AM', 'Soutern General', 'das', 'das', 'Cash',...' at line 1
-8/11/2024 11:27:55 AM You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT * FROM receipts''', 'somethin', '2024-08-11', '11:22:51 AM', 'Soutern ...' at line 1
-8/17/2024 10:55:23 PM Connection must be valid and open.
-8/17/2024 10:55:24 PM Authentication method 'auth_gssapi_client' not supported by any of the available plugins.
-8/17/2024 10:55:49 PM Connection must be valid and open.
-8/17/2024 10:55:50 PM Authentication method 'auth_gssapi_client' not supported by any of the available plugins.
-8/17/2024 10:56:26 PM Connection must be valid and open.
-8/17/2024 10:56:27 PM Authentication method 'auth_gssapi_client' not supported by any of the available plugins.
-8/17/2024 10:58:32 PM Authentication method 'auth_gssapi_client' not supported by any of the available plugins.
-8/17/2024 10:58:36 PM Authentication method 'auth_gssapi_client' not supported by any of the available plugins.
-8/17/2024 10:58:36 PM Connection must be valid and open.
-8/17/2024 11:17:14 PM 
-8/17/2024 11:19:33 PM 
-8/25/2024 8:30:13 PM Connection must be valid and open.
-8/25/2024 8:34:03 PM Incorrect datetime value: '2024-08-25 20:08:SS' for column `insurancedb`.`receipts`.`receipt_date` at row 1
-8/25/2024 8:38:12 PM Incorrect datetime value: '2024-08-25 20:08:SS.835261' for column `insurancedb`.`receipts`.`receipt_date` at row 1
-8/25/2024 8:45:19 PM Incorrect datetime value: '2024-08-25 08:45:11 PM' for column `insurancedb`.`receipts`.`receipt_date` at row 1
-8/25/2024 9:44:42 PM 
-8/25/2024 9:45:28 PM QuestPDF is a modern open-source library. We identify the importance of the library in your projects and therefore want to make sure you can safely and confidently continue the development. Being a healthy and growing community is the primary goal that motivates us to pursue professionalism. 
-
-Please refer to the QuestPDF License and Pricing webpage for more details. (https://www.questpdf.com/license/) 
-
-If you are an existing QuestPDF user and for any reason cannot update, you can stay with the 2022.12.X release with the extended quality support but without any new features, improvements, or optimizations. That release will always be available under the MIT license, free for commercial usage. We are planning to sunset support for the 2022.12.X branch around Q1 2024. Until then, it will continue to receive quality and bug-fix updates. 
-
-The library does not require any license key. We trust our users, and therefore the process is simple. To disable license validation and turn off this exception, please configure an eligible license using the QuestPDF.Settings.License API, for example: 
-
-"QuestPDF.Settings.License = LicenseType.Community;" 
-
-Learn more on: https://www.questpdf.com/license/configuration.html 
-
-
-8/26/2024 12:55:34 PM There is already an open DataReader associated with this Connection which must be closed first.
-8/26/2024 1:12:31 PM Table should have at least one column. Please call the 'ColumnsDefinition' method to define columns.
-8/26/2024 2:02:29 PM Could not find specified column in results: receipt_number
-8/26/2024 11:29:54 PM Invalid attempt to Read when reader is closed.
-8/26/2024 11:32:57 PM Invalid attempt to Read when reader is closed.
-8/26/2024 11:35:22 PM Invalid attempt to Read when reader is closed.
-8/26/2024 11:54:25 PM Invalid attempt to Read when reader is closed.
-8/26/2024 11:56:41 PM Invalid attempt to Read when reader is closed.
-8/26/2024 11:57:58 PM Invalid attempt to Read when reader is closed.
-8/27/2024 11:41:02 AM There is already an open DataReader associated with this Connection which must be closed first. companies loop
-8/27/2024 11:41:02 AM There is already an open DataReader associated with this Connection which must be closed first. companies loop
-8/27/2024 2:55:43 PM The 'Page.Content' layer has already been defined. Please call this method only once.
-8/27/2024 6:24:39 PM Unable to cast object of type 'System.Int64' to type 'System.Int32'.
-8/30/2024 10:17:49 PM Connection must be valid and open.
-8/30/2024 10:19:23 PM Connection must be valid and open.
-8/30/2024 10:19:36 PM Connection must be valid and open.
-8/30/2024 10:19:38 PM Connection must be valid and open.
-8/30/2024 10:19:39 PM Connection must be valid and open.
-8/30/2024 10:19:41 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
-8/30/2024 10:19:46 PM Connection must be valid and open.
-8/30/2024 10:19:47 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
-8/30/2024 10:19:48 PM Connection must be valid and open.
-8/30/2024 10:19:50 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
-8/30/2024 10:19:51 PM Connection must be valid and open.
-8/30/2024 10:19:52 PM Connection must be valid and open.
-8/30/2024 10:19:52 PM Connection must be valid and open.
-8/30/2024 10:19:53 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
-8/30/2024 10:20:01 PM Connection must be valid and open.
-8/30/2024 10:20:02 PM Connection must be valid and open.
-8/30/2024 10:20:02 PM Connection must be valid and open.
-8/30/2024 10:20:04 PM Connection must be valid and open.
-8/30/2024 10:20:05 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
-8/30/2024 10:20:06 PM Connection must be valid and open.
-8/30/2024 10:20:06 PM Connection must be valid and open.
-8/30/2024 10:20:06 PM Connection must be valid and open.
-8/30/2024 10:20:07 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
-8/30/2024 10:20:07 PM Connection must be valid and open.
-8/30/2024 10:20:20 PM Connection must be valid and open.
-8/30/2024 10:20:20 PM Connection must be valid and open.
-8/30/2024 10:20:20 PM Connection must be valid and open.
-8/30/2024 10:20:21 PM Authentication to host 'DESKTOP-LACU1DD' for user 'JRE' using method 'mysql_native_password' failed with message: Access denied for user 'JRE'@'DESKTOP-LACU1DD' (using password: YES)
-8/30/2024 10:20:23 PM Connection must be valid and open.
-8/30/2024 10:20:24 PM Connection must be valid and open.
-9/1/2024 7:18:42 PM Connection must be valid and open.
-9/1/2024 7:18:45 PM Connection must be valid and open.
-9/1/2024 7:18:45 PM Connection must be valid and open.
-9/1/2024 7:18:45 PM Connection must be valid and open.
-9/1/2024 7:18:46 PM Unable to connect to any of the specified MySQL hosts.
-9/1/2024 7:18:47 PM Connection must be valid and open.
-9/1/2024 7:18:47 PM Connection must be valid and open.
-9/1/2024 7:18:55 PM Connection must be valid and open.
-9/1/2024 7:19:28 PM Connection must be valid and open.
-9/1/2024 7:19:30 PM Connection must be valid and open.
-9/1/2024 7:19:30 PM Unable to connect to any of the specified MySQL hosts.
-9/1/2024 7:19:31 PM Connection must be valid and open.
-9/1/2024 7:19:31 PM Connection must be valid and open.
-9/1/2024 7:20:05 PM Connection must be valid and open.
-9/1/2024 7:20:07 PM Connection must be valid and open.
+9/9/2024 11:16:13 AM There is already an open DataReader associated with this Connection which must be closed first.
+9/9/2024 11:19:14 AM Object cannot be cast from DBNull to other types.
+9/9/2024 11:20:05 AM Object cannot be cast from DBNull to other types.
+9/9/2024 11:25:17 AM Object cannot be cast from DBNull to other types.
+9/9/2024 7:44:22 PM Connection must be valid and open.
+9/9/2024 7:44:22 PM Connection must be valid and open.
+9/9/2024 7:44:23 PM Unable to connect to any of the specified MySQL hosts.
+9/9/2024 7:44:39 PM Connection must be valid and open.
+9/9/2024 7:44:49 PM Connection must be valid and open.
+9/9/2024 7:44:49 PM Connection must be valid and open.
+9/9/2024 7:44:51 PM Unable to connect to any of the specified MySQL hosts.
+9/9/2024 7:45:04 PM Connection must be valid and open.
+9/9/2024 7:45:15 PM Connection must be valid and open.
+9/9/2024 7:45:15 PM Connection must be valid and open.
+9/9/2024 7:45:16 PM Unable to connect to any of the specified MySQL hosts.
+9/9/2024 7:45:17 PM Connection must be valid and open.
+9/11/2024 3:58:33 PM Connection must be valid and open.
+9/11/2024 8:59:45 PM 
+9/11/2024 9:01:05 PM 
+9/11/2024 9:01:09 PM 
+9/11/2024 9:04:26 PM You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1
+9/11/2024 9:05:49 PM You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%'t'%' at line 1
+9/11/2024 9:05:49 PM You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%'te'%' at line 1
+9/11/2024 9:05:50 PM You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%'tes'%' at line 1
+9/11/2024 9:05:50 PM You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%'test'%' at line 1
+9/11/2024 9:05:53 PM You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%''%' at line 1

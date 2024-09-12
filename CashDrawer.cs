@@ -22,12 +22,12 @@ namespace Wilkes_County_Insurance_App
         {
             InitializeComponent();
 
-            initUI();
+            //initUI();
         }
 
         private void initUI()
         {
-            dataInit();
+            //dataInit();
         }
 
         private void dataInit()

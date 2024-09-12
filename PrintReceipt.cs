@@ -225,7 +225,8 @@ namespace Wilkes_County_Insurance_App
 
                     clearFields();
                 }*/
-                createPDF();
+
+                
                 try
                 {
                     if (editMode)
@@ -241,8 +242,10 @@ namespace Wilkes_County_Insurance_App
                 {
                     MessageBox.Show($"Error: {ex.Message}");
                 }
+                
 
                 clearFields();
+                createPDF();
             }
 
        
@@ -288,11 +291,25 @@ namespace Wilkes_County_Insurance_App
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
-                if (cmd.Connection.State == ConnectionState.Closed)
+                if (cmd.Connection.State == ConnectionState.Open)
                 {
+                    /// 2024-9-09: Added this line to close the connection before opening it again
+                    /// Since for some reason it was thinking a datareader was open.
+                    /// I LOVE PROGRAMMING HOLY SHIT THIS IS ANNOYING
+                    //cmd.Connection.Open();
+                    cmd.Connection.Close();
                     cmd.Connection.Open();
                 }
-                cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES ('{receivedFromFirstName}', '{receivedFromLastName}', '{receiptDate.ToString("yyyy-MM-dd HH:mm:ss")}', '{receiptTime}', '{remit_to}', '{reference}', '{transactionDescription}', '{paymentMethod}', {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";
+                /*cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES ('{receivedFromFirstName}', '{receivedFromLastName}', '{receiptDate.ToString("yyyy-MM-dd HH:mm:ss")}', '{receiptTime}', '{remit_to}', '{reference}', '{transactionDescription}', '{paymentMethod}', {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";*/
+                cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES (@receivedFromFirstName, @receivedFromLastName, @receiptDate, @receiptTime, @remit_to, @reference, @transactionDescription, @paymentMethod, {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";
+                cmd.Parameters.AddWithValue("@receivedFromFirstName", receivedFromFirstName);
+                cmd.Parameters.AddWithValue("@receivedFromLastName", receivedFromLastName);
+                cmd.Parameters.AddWithValue("@receiptDate", receiptDate.ToString("yyyy-MM-dd HH:mm:ss"));
+                cmd.Parameters.AddWithValue("@receiptTime", receiptTime);
+                cmd.Parameters.AddWithValue("@remit_to", remit_to);
+                cmd.Parameters.AddWithValue("@reference", reference);
+                cmd.Parameters.AddWithValue("@transactionDescription", transactionDescription);
+                cmd.Parameters.AddWithValue("@paymentMethod", paymentMethod);
                 cmd.ExecuteNonQuery();
 
                 /// DEPRECATED
@@ -385,6 +402,7 @@ namespace Wilkes_County_Insurance_App
                 {
                     origionalReceiptID = Convert.ToInt32(reader["MAX(receipt_id)"]);
                 }
+
                 reader.Close();
             }
             catch (Exception ex)
@@ -494,7 +512,7 @@ namespace Wilkes_County_Insurance_App
                                 table.Cell().Row(2).Column(2).Element(BlockLeft).Text(reference).FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(2).Column(3).Element(BlockLeft).Text(transactionDescription).FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(2).Column(4).Element(BlockLeft).Text(paymentMethod).FontFamily(Fonts.Consolas).FontSize(8);
-                                table.Cell().Row(2).Column(5).Element(BlockRight).Text(paymentAmount.ToString()).FontFamily(Fonts.Consolas).FontSize(8);
+                                table.Cell().Row(2).Column(5).Element(BlockRight).Text(paymentAmount.ToString("0.00")).FontFamily(Fonts.Consolas).FontSize(8);
 
                                 table.Cell().Row(3).Column(5).Element(BlockRight).Text(".00").FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(4).Column(5).Element(BlockRight).Text(".00").FontFamily(Fonts.Consolas).FontSize(8);
@@ -503,7 +521,7 @@ namespace Wilkes_County_Insurance_App
 
                                 // total section
                                 table.Cell().Row(7).Column(4).Element(BlockLeft).Text("Total:").FontFamily(Fonts.Consolas).FontSize(8);
-                                table.Cell().Row(7).Column(5).Element(BlockRight).Text(paymentAmount.ToString()).FontFamily(Fonts.Consolas).FontSize(8);
+                                table.Cell().Row(7).Column(5).Element(BlockRight).Text(paymentAmount.ToString("0.00")).FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(8).Column(4).Element(BlockLeft).Text("Amount Tendered:").FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(8).Column(5).Element(BlockRight).Text(amountTendered.ToString()).FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(9).Column(4).Element(BlockLeft).Text("Change Due:").FontFamily(Fonts.Consolas).FontSize(8);
