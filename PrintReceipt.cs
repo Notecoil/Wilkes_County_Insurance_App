@@ -99,6 +99,7 @@ namespace Wilkes_County_Insurance_App
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
+                refreshConnection(cmd);
                 cmd.CommandText = "SELECT * FROM employees";
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -118,6 +119,23 @@ namespace Wilkes_County_Insurance_App
             }
         }
 
+        private void refreshConnection(MySqlCommand cmd)
+        {
+            if (cmd.Connection.State == ConnectionState.Open)
+            {
+                /// 2024-9-09: Added this line to close the connection before opening it again
+                /// Since for some reason it was thinking a datareader was open.
+                /// I LOVE PROGRAMMING HOLY SHIT THIS IS ANNOYING
+                //cmd.Connection.Open();
+                cmd.Connection.Close();
+                cmd.Connection.Open();
+            }
+            else if (cmd.Connection.State == ConnectionState.Closed)
+            {
+                cmd.Connection.Open();
+            }
+        }
+
         private void getDefaultEmployee()
         {
             // gets the default employee from the defaultuser file
@@ -131,6 +149,7 @@ namespace Wilkes_County_Insurance_App
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
+                refreshConnection(cmd);
                 cmd.CommandText = "SELECT * FROM insurance_companies";
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -258,12 +277,30 @@ namespace Wilkes_County_Insurance_App
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
-                if (cmd.Connection.State == ConnectionState.Closed)
+                refreshConnection(cmd);
+                MySqlTransaction tr = null;
+                tr = parentForm.connection.BeginTransaction();
+                cmd.Transaction = tr;
+                //cmd.CommandText = $"UPDATE insurancedb.receipts SET received_from_first = '{receivedFromFirstName}', received_from_last = '{receivedFromLastName}', receipt_date = '{receiptDate.ToString("yyyy-MM-dd HH:mm:ss")}', receipt_time = '{receiptTime}', remit_to = '{remit_to}', reference = '{reference}', transaction_description = '{transactionDescription}', payment_method = '{paymentMethod}', payment_amount = {paymentAmount}, cash_paid = {amountTendered}, change_due = {changeDue}, employee_name = '{employeeName}' WHERE receipt_id = {receiptID};";
+                try
                 {
-                    cmd.Connection.Open();
+                    cmd.CommandText = $"UPDATE insurancedb.receipts SET received_from_first = @receivedFromFirst, received_from_last = @receivedFromLast, receipt_date = @receiptDate, receipt_time = @receiptTime, remit_to = @remitTo, reference = @reference, transaction_description = @transactionDescription, payment_method = @paymentMethod, payment_amount = {paymentAmount}, cash_paid = {amountTendered}, change_due = {changeDue}, employee_name = '{employeeName}' WHERE receipt_id = {receiptID};";
+                    cmd.Parameters.AddWithValue("@receivedFromFirst", receivedFromFirstName);
+                    cmd.Parameters.AddWithValue("@receivedFromLast", receivedFromLastName);
+                    cmd.Parameters.AddWithValue("@receiptDate", receiptDate.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cmd.Parameters.AddWithValue("@receiptTime", receiptTime);
+                    cmd.Parameters.AddWithValue("@remitTo", remit_to);
+                    cmd.Parameters.AddWithValue("@reference", reference);
+                    cmd.Parameters.AddWithValue("@transactionDescription", transactionDescription);
+                    cmd.Parameters.AddWithValue("@paymentMethod", paymentMethod);
+                    cmd.ExecuteNonQuery();
+                    tr.Commit();
                 }
-                cmd.CommandText = $"UPDATE insurancedb.receipts SET received_from_first = '{receivedFromFirstName}', received_from_last = '{receivedFromLastName}', receipt_date = '{receiptDate.ToString("yyyy-MM-dd HH:mm:ss")}', receipt_time = '{receiptTime}', remit_to = '{remit_to}', reference = '{reference}', transaction_description = '{transactionDescription}', payment_method = '{paymentMethod}', payment_amount = {paymentAmount}, cash_paid = {amountTendered}, change_due = {changeDue}, employee_name = '{employeeName}' WHERE receipt_id = {receiptID};";
-                cmd.ExecuteNonQuery();
+                catch (Exception ex)
+                {
+                    tr.Rollback();
+                    File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message} EDITING RECEIPT TRANSACTION {ex}\n");
+                }
             }
             catch (Exception ex)
             {
@@ -300,17 +337,40 @@ namespace Wilkes_County_Insurance_App
                     cmd.Connection.Close();
                     cmd.Connection.Open();
                 }
+                else if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                MySqlTransaction tr = null;
+                tr = parentForm.connection.BeginTransaction();
+                cmd.Transaction = tr;
+
+                try
+                {
+                    cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES (@receivedFromFirstName, @receivedFromLastName, @receiptDate, @receiptTime, @remit_to, @reference, @transactionDescription, @paymentMethod, @paymentAmount, 0.0, 0.0, @employeeName);";
+                    cmd.Parameters.AddWithValue("@receivedFromFirstName", receivedFromFirstName);
+                    cmd.Parameters.AddWithValue("@receivedFromLastName", receivedFromLastName);
+                    cmd.Parameters.AddWithValue("@receiptDate", receiptDate.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cmd.Parameters.AddWithValue("@receiptTime", receiptTime);
+                    cmd.Parameters.AddWithValue("@remit_to", remit_to);
+                    cmd.Parameters.AddWithValue("@reference", reference);
+                    cmd.Parameters.AddWithValue("@transactionDescription", transactionDescription);
+                    cmd.Parameters.AddWithValue("@paymentMethod", paymentMethod);
+                    cmd.Parameters.AddWithValue("@paymentAmount", paymentAmount);
+                    cmd.Parameters.AddWithValue("@employeeName", employeeName);
+                    cmd.ExecuteNonQuery();
+                    tr.Commit();
+                }
+                catch (Exception ex)
+                {
+                    tr.Rollback();
+                    File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message} SAVING RECEIPT TRANSACTION {ex}\n");
+                }
                 /*cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES ('{receivedFromFirstName}', '{receivedFromLastName}', '{receiptDate.ToString("yyyy-MM-dd HH:mm:ss")}', '{receiptTime}', '{remit_to}', '{reference}', '{transactionDescription}', '{paymentMethod}', {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";*/
-                cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES (@receivedFromFirstName, @receivedFromLastName, @receiptDate, @receiptTime, @remit_to, @reference, @transactionDescription, @paymentMethod, {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";
-                cmd.Parameters.AddWithValue("@receivedFromFirstName", receivedFromFirstName);
-                cmd.Parameters.AddWithValue("@receivedFromLastName", receivedFromLastName);
-                cmd.Parameters.AddWithValue("@receiptDate", receiptDate.ToString("yyyy-MM-dd HH:mm:ss"));
-                cmd.Parameters.AddWithValue("@receiptTime", receiptTime);
-                cmd.Parameters.AddWithValue("@remit_to", remit_to);
-                cmd.Parameters.AddWithValue("@reference", reference);
-                cmd.Parameters.AddWithValue("@transactionDescription", transactionDescription);
-                cmd.Parameters.AddWithValue("@paymentMethod", paymentMethod);
-                cmd.ExecuteNonQuery();
+                
+                
+
+                cmd.Connection.Close();
 
                 /// DEPRECATED
                 /// Previously updated the cash drawer with the payment amount
@@ -323,7 +383,7 @@ namespace Wilkes_County_Insurance_App
             catch (Exception ex)
             {
                 //MessageBox.Show($"Error: Failed to connect to database: {ex.Message}");
-                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message}\n");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message} SAVING RECEIPT {ex}\n");
             }
         }
 
@@ -396,6 +456,7 @@ namespace Wilkes_County_Insurance_App
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
+                refreshConnection(cmd);
                 cmd.CommandText = "SELECT MAX(receipt_id) FROM receipts";
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -407,7 +468,7 @@ namespace Wilkes_County_Insurance_App
             }
             catch (Exception ex)
             {
-                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message}\n");
+                File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message} RECEIPT ID {ex}\n");
             }
             return origionalReceiptID += 1;
         }
@@ -669,7 +730,9 @@ namespace Wilkes_County_Insurance_App
             if (selectedReceiptID != 0)
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
-                cmd.CommandText = $"SELECT * FROM receipts WHERE receipt_id = {selectedReceiptID};";
+                refreshConnection(cmd);
+                cmd.CommandText = $"SELECT * FROM receipts WHERE receipt_id = @selectedReceiptID;";
+                cmd.Parameters.AddWithValue("@selectedReceiptID", selectedReceiptID);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {

@@ -112,6 +112,19 @@ namespace Wilkes_County_Insurance_App
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    /// 2024-9-09: Added this line to close the connection before opening it again
+                    /// Since for some reason it was thinking a datareader was open.
+                    /// I LOVE PROGRAMMING HOLY SHIT THIS IS ANNOYING
+                    //cmd.Connection.Open();
+                    cmd.Connection.Close();
+                    cmd.Connection.Open();
+                }
+                else if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
                 cmd.CommandText = "SELECT * FROM receipts WHERE receipt_date BETWEEN '" + startDate.ToString("yyyy-MM-dd 00:00:00") + "' AND '" + endDate.ToString("yyyy-MM-dd 23:59:59") + "';";
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -274,6 +287,19 @@ namespace Wilkes_County_Insurance_App
             try // gets companies
             {
                 MySqlCommand mySqlCommand = parentForm.connection.CreateCommand();
+                if (mySqlCommand.Connection.State == ConnectionState.Open)
+                {
+                    /// 2024-9-09: Added this line to close the connection before opening it again
+                    /// Since for some reason it was thinking a datareader was open.
+                    /// I LOVE PROGRAMMING HOLY SHIT THIS IS ANNOYING
+                    //cmd.Connection.Open();
+                    mySqlCommand.Connection.Close();
+                    mySqlCommand.Connection.Open();
+                }
+                else if (mySqlCommand.Connection.State == ConnectionState.Closed)
+                {
+                    mySqlCommand.Connection.Open();
+                }
                 mySqlCommand.CommandText = $"SELECT DISTINCT remit_to FROM receipts WHERE receipt_date BETWEEN '{startDate.ToString("yyyy-MM-dd 00:00:00")}' AND '{endDate.ToString("yyyy-MM-dd 23:59:59")}'";
                 MySqlDataReader reader = mySqlCommand.ExecuteReader();
                 if (reader.HasRows)
@@ -335,6 +361,19 @@ namespace Wilkes_County_Insurance_App
                 /// FOR SOME FUCKING REASON I LOVE PROGRAMMING AND ITS
                 /// BULLLSHIT
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    /// 2024-9-09: Added this line to close the connection before opening it again
+                    /// Since for some reason it was thinking a datareader was open.
+                    /// I LOVE PROGRAMMING HOLY SHIT THIS IS ANNOYING
+                    //cmd.Connection.Open();
+                    cmd.Connection.Close();
+                    cmd.Connection.Open();
+                }
+                else if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
                 cmd.CommandText = "SELECT * FROM receipts WHERE receipt_date BETWEEN '" + startDate.ToString("yyyy-MM-dd 00:00:00") + "' AND '" + endDate.ToString("yyyy-MM-dd 23:59:59") + "' AND remit_to = '" + company + "';";
                 MySqlDataReader reader = cmd.ExecuteReader();
                 container.Page(page =>
@@ -471,6 +510,19 @@ namespace Wilkes_County_Insurance_App
             try
             {
                 MySqlCommand cmd = parentForm.connection.CreateCommand();
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    /// 2024-9-09: Added this line to close the connection before opening it again
+                    /// Since for some reason it was thinking a datareader was open.
+                    /// I LOVE PROGRAMMING HOLY SHIT THIS IS ANNOYING
+                    //cmd.Connection.Open();
+                    cmd.Connection.Close();
+                    cmd.Connection.Open();
+                }
+                else if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
                 //cmd.CommandText = "SELECT * FROM receipts WHERE receipt_date BETWEEN '" + startDate.ToString("yyyy-MM-dd 00:00:00") + "' AND '" + endDate.ToString("yyyy-MM-dd 23:59:59") + "';";
                 cmd.CommandText = $"SELECT employee_name, COUNT(*) AS items, SUM(payment_amount) AS amount FROM receipts WHERE receipt_date BETWEEN '{startDate.ToString("yyyy-MM-dd 00:00:00")}' AND '{endDate.ToString("yyyy-MM-dd 23:59:59")}' GROUP BY employee_name;";
                 MySqlDataReader reader = cmd.ExecuteReader();
