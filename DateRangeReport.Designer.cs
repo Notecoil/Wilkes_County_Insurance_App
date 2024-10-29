@@ -34,6 +34,8 @@
             endDatePicker = new DateTimePicker();
             printReportButton = new Button();
             backButton = new Button();
+            startTimePicker = new DateTimePicker();
+            endTimePicker = new DateTimePicker();
             SuspendLayout();
             // 
             // startDatePicker
@@ -90,11 +92,29 @@
             backButton.UseVisualStyleBackColor = true;
             backButton.Click += backButton_Click;
             // 
+            // startTimePicker
+            // 
+            startTimePicker.Format = DateTimePickerFormat.Time;
+            startTimePicker.Location = new Point(421, 52);
+            startTimePicker.Name = "startTimePicker";
+            startTimePicker.Size = new Size(89, 23);
+            startTimePicker.TabIndex = 9;
+            // 
+            // endTimePicker
+            // 
+            endTimePicker.Format = DateTimePickerFormat.Time;
+            endTimePicker.Location = new Point(421, 102);
+            endTimePicker.Name = "endTimePicker";
+            endTimePicker.Size = new Size(89, 23);
+            endTimePicker.TabIndex = 10;
+            // 
             // DateRangeReport
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(endTimePicker);
+            Controls.Add(startTimePicker);
             Controls.Add(backButton);
             Controls.Add(printReportButton);
             Controls.Add(endDatePicker);
@@ -116,5 +136,7 @@
         private DateTimePicker endDatePicker;
         private Button printReportButton;
         private Button backButton;
+        private DateTimePicker startTimePicker;
+        private DateTimePicker endTimePicker;
     }
 }

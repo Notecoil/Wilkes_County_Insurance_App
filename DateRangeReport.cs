@@ -24,6 +24,8 @@ namespace Wilkes_County_Insurance_App
         private int pageNumber = 1;
         private DateTime startDate;
         private DateTime endDate;
+        private DateTime startTime;
+        private DateTime endTime;
 
         private decimal cashAmount;
 
@@ -44,7 +46,15 @@ namespace Wilkes_County_Insurance_App
         /// </summary>
         private void initUI()
         {
+            startTimePicker.ShowUpDown = true;
+            startTimePicker.Format = DateTimePickerFormat.Custom;
+            startTimePicker.CustomFormat = "hh:mm tt";
+            startTimePicker.Value = DateTime.Parse("12:00 AM");
 
+            endTimePicker.ShowUpDown = true;
+            endTimePicker.Format = DateTimePickerFormat.Custom;
+            endTimePicker.CustomFormat = "hh:mm tt";
+            endTimePicker.Value = DateTime.Parse("11:59 PM");
             switch (mode)
             {
                 case "totalReceipts": // total receipts
@@ -88,6 +98,8 @@ namespace Wilkes_County_Insurance_App
             //endDate = endDatePicker.Value.ToString("yyyy-MM-dd");
             startDate = startDatePicker.Value;
             endDate = endDatePicker.Value;
+            startTime = startTimePicker.Value;
+            endTime = endTimePicker.Value;
             QuestPDF.Settings.License = LicenseType.Community;
             switch (mode)
             {
@@ -125,7 +137,8 @@ namespace Wilkes_County_Insurance_App
                 {
                     cmd.Connection.Open();
                 }
-                cmd.CommandText = "SELECT * FROM receipts WHERE receipt_date BETWEEN '" + startDate.ToString("yyyy-MM-dd 00:00:00") + "' AND '" + endDate.ToString("yyyy-MM-dd 23:59:59") + "';";
+                //cmd.CommandText = "SELECT * FROM receipts WHERE receipt_date BETWEEN '" + startDate.ToString("yyyy-MM-dd 00:00:00") + "' AND '" + endDate.ToString("yyyy-MM-dd 23:59:59") + "';";
+                cmd.CommandText = $"SELECT * FROM receipts WHERE receipt_date BETWEEN '" + startDate.ToString("yyyy-MM-dd") + " " + startTime.ToString("HH:mm:ss") + "' AND '" + endDate.ToString("yyyy-MM-dd") + " " + endTime.ToString("HH:mm:ss") + "';";
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
