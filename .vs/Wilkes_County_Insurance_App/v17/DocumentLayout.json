@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\daterangereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|c:\\users\\jre\\source\\repos\\wilkes_county_insurance_app\\daterangereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:daterangereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|c:\\users\\jre\\source\\repos\\wilkes_county_insurance_app\\printreceipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\printreceipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F167E6-600D-4ED4-BA29-5C95E3370BEB}|Wilkes_County_Insurance_App.csproj|solutionrelative:printreceipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -116,7 +116,7 @@
               "RelativeDocumentMoniker": "DateRangeReport.cs",
               "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.cs",
               "RelativeToolTip": "DateRangeReport.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAswIwAAAD8AAAA",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAUwEsAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-18T02:25:38.61Z",
               "EditorCaption": ""
@@ -131,8 +131,7 @@
               "RelativeToolTip": "PrintReceipt.cs",
               "ViewState": "AQIAANACAAAAAAAAAAAAAJcAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T01:52:41.331Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-26T01:52:41.331Z"
             },
             {
               "$type": "Document",
@@ -203,8 +202,7 @@
               "RelativeToolTip": "Form1.cs",
               "ViewState": "AQIAACgAAAAAAAAAAAAgwCIAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T01:27:59.089Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-31T01:27:59.089Z"
             },
             {
               "$type": "Document",
@@ -215,8 +213,7 @@
               "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\DateRangeReport.cs [Design]",
               "RelativeToolTip": "DateRangeReport.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-18T02:24:55.09Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-08-18T02:24:55.09Z"
             },
             {
               "$type": "Document",
@@ -227,8 +224,7 @@
               "ToolTip": "C:\\Users\\JRE\\source\\repos\\Wilkes_County_Insurance_App\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T01:53:10.647Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-08-01T01:53:10.647Z"
             },
             {
               "$type": "Document",
@@ -263,8 +259,7 @@
               "RelativeToolTip": "DateRangeReport.Designer.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAQwFIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T20:17:28.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-01T20:17:28.303Z"
             },
             {
               "$type": "Document",
@@ -378,8 +373,7 @@
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAxwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T01:53:05.938Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-01T01:53:05.938Z"
             },
             {
               "$type": "Document",

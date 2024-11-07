@@ -122,3 +122,5 @@
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
    at Wilkes_County_Insurance_App.PrintReceipt.getReceiptID() in C:\Users\JRE\source\repos\Wilkes_County_Insurance_App\PrintReceipt.cs:line 418
+10/28/2024 11:46:42 PM Unable to connect to any of the specified MySQL hosts.
+10/28/2024 11:46:45 PM Connection must be valid and open.
