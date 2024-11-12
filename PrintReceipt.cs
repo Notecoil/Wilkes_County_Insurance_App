@@ -34,6 +34,8 @@ namespace Wilkes_County_Insurance_App
         private string employeeName;
         private decimal amountTendered;
         private decimal changeDue;
+        private decimal policyFee;
+        private decimal reinstatementFee;
 
         private int selectedReceiptID;
 
@@ -72,6 +74,13 @@ namespace Wilkes_County_Insurance_App
             paymentMethodComboBox.SelectedIndex = 0;
             editingReceiptLabel.Visible = false;
             receiptDatePicker.Value = DateTime.Now;
+
+            policyFeeCheckBox.Checked = false;
+            reinstatementCheckBox.Checked = false;
+            policyFeeTextBox.Enabled = false;
+            reinstatementTextBox.Enabled = false;
+            policyFeeWarning.Visible = false;
+            reinstatementWarning.Visible = false;
 
             defaultEmployee = File.ReadAllText(parentForm.defaultUserFileName);
             employeeComboBox.SelectedItem = defaultEmployee;
@@ -245,7 +254,7 @@ namespace Wilkes_County_Insurance_App
                     clearFields();
                 }*/
 
-                
+
                 try
                 {
                     if (editMode)
@@ -261,13 +270,13 @@ namespace Wilkes_County_Insurance_App
                 {
                     MessageBox.Show($"Error: {ex.Message}");
                 }
-                
+
 
                 clearFields();
                 createPDF();
             }
 
-       
+
 
         }
 
@@ -320,6 +329,10 @@ namespace Wilkes_County_Insurance_App
             receiptDatePicker.Value = DateTime.Now;
             editingReceiptLabel.Visible = false;
             employeeComboBox.SelectedItem = defaultEmployee;
+            policyFeeCheckBox.Checked = false;
+            policyFeeTextBox.Text = "";
+            reinstatementCheckBox.Checked = false;
+            reinstatementTextBox.Text = "";
         }
 
         private void saveReceiptToDatabase()
@@ -345,9 +358,11 @@ namespace Wilkes_County_Insurance_App
                 tr = parentForm.connection.BeginTransaction();
                 cmd.Transaction = tr;
 
+                //decimal total = paymentAmount + policyFee + reinstatementFee;
+
                 try
                 {
-                    cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES (@receivedFromFirstName, @receivedFromLastName, @receiptDate, @receiptTime, @remit_to, @reference, @transactionDescription, @paymentMethod, @paymentAmount, 0.0, 0.0, @employeeName);";
+                    cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name, policy_fee, reinstatement) VALUES (@receivedFromFirstName, @receivedFromLastName, @receiptDate, @receiptTime, @remit_to, @reference, @transactionDescription, @paymentMethod, @paymentAmount, 0.0, 0.0, @employeeName, @policy_fee, @reinstatement);";
                     cmd.Parameters.AddWithValue("@receivedFromFirstName", receivedFromFirstName);
                     cmd.Parameters.AddWithValue("@receivedFromLastName", receivedFromLastName);
                     cmd.Parameters.AddWithValue("@receiptDate", receiptDate.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -358,6 +373,8 @@ namespace Wilkes_County_Insurance_App
                     cmd.Parameters.AddWithValue("@paymentMethod", paymentMethod);
                     cmd.Parameters.AddWithValue("@paymentAmount", paymentAmount);
                     cmd.Parameters.AddWithValue("@employeeName", employeeName);
+                    cmd.Parameters.AddWithValue("@policy_fee", policyFee);
+                    cmd.Parameters.AddWithValue("@reinstatement", reinstatementFee);
                     cmd.ExecuteNonQuery();
                     tr.Commit();
                 }
@@ -367,8 +384,8 @@ namespace Wilkes_County_Insurance_App
                     File.AppendAllText("errorlog.log", $"{DateTime.Now} {ex.Message} SAVING RECEIPT TRANSACTION {ex}\n");
                 }
                 /*cmd.CommandText = $"INSERT INTO insurancedb.receipts(received_from_first, received_from_last, receipt_date, receipt_time, remit_to, reference, transaction_description, payment_method, payment_amount, cash_paid, change_due, employee_name) VALUES ('{receivedFromFirstName}', '{receivedFromLastName}', '{receiptDate.ToString("yyyy-MM-dd HH:mm:ss")}', '{receiptTime}', '{remit_to}', '{reference}', '{transactionDescription}', '{paymentMethod}', {paymentAmount}, {amountTendered}, {changeDue}, '{employeeName}');";*/
-                
-                
+
+
 
                 cmd.Connection.Close();
 
@@ -402,9 +419,9 @@ namespace Wilkes_County_Insurance_App
             // gets the data from the entry fields
             receivedFromFirstName = firstNameTextBox.Text;
             receivedFromLastName = lastNameTextBox.Text;
-            
+
             receiptDate = receiptDatePicker.Value;
-            
+
             receiptTime = receiptDatePicker.Value.ToString("hh:mm:ss tt");
 
             remit_to = remitToComboBox.SelectedItem.ToString();
@@ -412,6 +429,8 @@ namespace Wilkes_County_Insurance_App
             transactionDescription = transactionDescriptionTextBox.Text;
 
             paymentMethod = "Cash";
+            
+
 
             if (billPaymentWarningLabel.Visible != true)
             {
@@ -441,7 +460,10 @@ namespace Wilkes_County_Insurance_App
             {
                 employeeName = employeeComboBox.SelectedItem.ToString();
             }
-            
+
+            policyFee = policyFeeTextBox.Text != "" ? Convert.ToDecimal(policyFeeTextBox.Text) : 0;
+            reinstatementFee = reinstatementTextBox.Text != "" ? Convert.ToDecimal(reinstatementTextBox.Text) : 0;
+
         }
 
         /// <summary>
@@ -477,7 +499,7 @@ namespace Wilkes_County_Insurance_App
         /// Creates a PDF receipt using a set of data provided by the user
         /// </summary>
         /// <param name="path"></param>
-        private void createPDF(string path="")
+        private void createPDF(string path = "")
         {
             // Create a new PDF document for a receipt
             var document = Document.Create(container =>
@@ -568,21 +590,59 @@ namespace Wilkes_County_Insurance_App
                                 //table.Cell().ColumnSpan(5).Text("_________________________________________________________________________________________").FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().ColumnSpan(5).BorderTop(0.5f);
 
-                                // bottom row
+                                // bottom row 1
                                 table.Cell().Row(2).Column(1).Element(BlockLeft).Text(remit_to).FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(2).Column(2).Element(BlockLeft).Text(reference).FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(2).Column(3).Element(BlockLeft).Text(transactionDescription).FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(2).Column(4).Element(BlockLeft).Text(paymentMethod).FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(2).Column(5).Element(BlockRight).Text(paymentAmount.ToString("0.00")).FontFamily(Fonts.Consolas).FontSize(8);
 
-                                table.Cell().Row(3).Column(5).Element(BlockRight).Text(".00").FontFamily(Fonts.Consolas).FontSize(8);
-                                table.Cell().Row(4).Column(5).Element(BlockRight).Text(".00").FontFamily(Fonts.Consolas).FontSize(8);
+                                // bottom row 2
+                                /*if (policyFeeCheckBox.Checked == true)
+                                {
+                                    table.Cell().Row(3).Column(4).Element(BlockLeft).Text("Policy Fee").FontFamily(Fonts.Consolas).FontSize(8);
+                                    table.Cell().Row(3).Column(5).Element(BlockRight).Text(policyFee.ToString("0.00")).FontFamily(Fonts.Consolas).FontSize(8);
+                                }
+                                else
+                                {
+                                    table.Cell().Row(3).Column(5).Element(BlockRight).Text(".00").FontFamily(Fonts.Consolas).FontSize(8);
+                                }*/
+                                if (policyFee > 0)
+                                {
+                                    table.Cell().ColumnSpan(5).BorderTop(0.5f);
+                                    table.Cell().Row(3).Column(4).Element(BlockLeft).Text("Policy Fee").FontFamily(Fonts.Consolas).FontSize(8);
+                                    table.Cell().Row(3).Column(5).Element(BlockRight).Text(policyFee.ToString("0.00")).FontFamily(Fonts.Consolas).FontSize(8);
+                                }
+                                else if (reinstatementFee > 0)
+                                {
+                                    table.Cell().ColumnSpan(5).BorderTop(0.5f);
+                                    table.Cell().Row(3).Column(4).Element(BlockLeft).Text("Reinstatement").FontFamily(Fonts.Consolas).FontSize(8);
+                                    table.Cell().Row(3).Column(5).Element(BlockRight).Text(reinstatementFee.ToString("0.00")).FontFamily(Fonts.Consolas).FontSize(8);
+                                }
+                                else
+                                {
+                                    table.Cell().Row(3).Column(5).Element(BlockRight).Text(".00").FontFamily(Fonts.Consolas).FontSize(8);
+                                }
+                                
+                                // bottom row 3
+                                if (policyFee > 0 && reinstatementFee > 0)
+                                {
+                                    table.Cell().Row(4).Column(4).Element(BlockLeft).Text("Reinstatement").FontFamily(Fonts.Consolas).FontSize(8);
+                                    table.Cell().Row(4).Column(5).Element(BlockRight).Text(reinstatementFee.ToString("0.00")).FontFamily(Fonts.Consolas).FontSize(8);
+                                }
+                                else
+                                {
+                                    table.Cell().Row(4).Column(5).Element(BlockRight).Text(".00").FontFamily(Fonts.Consolas).FontSize(8);
+                                }
+
+                                // bottom row 4
                                 table.Cell().Row(5).Column(5).Element(BlockRight).Text(".00").FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(6).Column(5).Border(0.5f);
 
                                 // total section
+                                decimal total = paymentAmount + policyFee + reinstatementFee;
                                 table.Cell().Row(7).Column(4).Element(BlockLeft).Text("Total:").FontFamily(Fonts.Consolas).FontSize(8);
-                                table.Cell().Row(7).Column(5).Element(BlockRight).Text(paymentAmount.ToString("0.00")).FontFamily(Fonts.Consolas).FontSize(8);
+                                table.Cell().Row(7).Column(5).Element(BlockRight).Text(total.ToString("0.00")).FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(8).Column(4).Element(BlockLeft).Text("Amount Tendered:").FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(8).Column(5).Element(BlockRight).Text(amountTendered.ToString()).FontFamily(Fonts.Consolas).FontSize(8);
                                 table.Cell().Row(9).Column(4).Element(BlockLeft).Text("Change Due:").FontFamily(Fonts.Consolas).FontSize(8);
@@ -679,9 +739,9 @@ namespace Wilkes_County_Insurance_App
             }
         }*/
 
-        private void calcNumber() // checks if the payment amount is a valid number
+        private void calcNumber(object sender, string amount = "") // checks if the payment amount is a valid number
         {
-            try
+            /*try
             {
                 paymentAmount = Convert.ToDecimal(paymentAmountTextBox.Text);
                 billPaymentWarningLabel.Visible = false;
@@ -696,21 +756,82 @@ namespace Wilkes_County_Insurance_App
                 {
                     billPaymentWarningLabel.Visible = true;
                 }
+            }*/
+            try
+            {
+                paymentAmount = Convert.ToDecimal(amount);
+                switch (sender)
+                {
+                    case TextBox _ when sender == paymentAmountTextBox:
+                        billPaymentWarningLabel.Visible = false;
+                        break;
+                    case TextBox _ when sender == policyFeeTextBox:
+                        policyFeeWarning.Visible = false;
+                        break;
+                    case TextBox _ when sender == reinstatementTextBox:
+                        reinstatementWarning.Visible = false;
+                        break;
+                }   
+            }
+            catch (Exception ex)
+            {
+                if (amount == "")
+                {
+                    switch (sender)
+                    {
+                        case TextBox _ when sender == paymentAmountTextBox:
+                            billPaymentWarningLabel.Visible = false;
+                            break;
+                        case TextBox _ when sender == policyFeeTextBox:
+                            policyFeeWarning.Visible = false;
+                            break;
+                        case TextBox _ when sender == reinstatementTextBox:
+                            reinstatementWarning.Visible = false;
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (sender)
+                    {
+                        case TextBox _ when sender == paymentAmountTextBox:
+                            billPaymentWarningLabel.Visible = true;
+                            break;
+                        case TextBox _ when sender == policyFeeTextBox:
+                            policyFeeWarning.Visible = true;
+                            break;
+                        case TextBox _ when sender == reinstatementTextBox:
+                            reinstatementWarning.Visible = true;
+                            break;
+
+                    }
+                }
+            }
+        }
+
+        private void warningCheck()
+        {
+            Label[] warnings = { billPaymentWarningLabel, policyFeeWarning, reinstatementWarning };
+            foreach (Label warning in warnings)
+            {
+                if (warning.Visible == true)
+                {
+                    printReceiptButton.Enabled = false;
+                    return;
+                }
+                else if (warning.Visible == false)
+                {
+                    printReceiptButton.Enabled = true;
+                }
             }
         }
 
         private void paymentAmountTextBox_TextChanged(object sender, EventArgs e)
         {
             // check if the payment amount is a valid number, if not disables the number and prints a warning
-            calcNumber();
-            if (billPaymentWarningLabel.Visible == true)
-            {
-                printReceiptButton.Enabled = false;
-            }
-            else
-            {
-                printReceiptButton.Enabled = true;
-            }
+            string amount = paymentAmountTextBox.Text;
+            calcNumber(sender, amount);
+            warningCheck();
         }
 
         private void clearFieldsButton_Click(object sender, EventArgs e)
@@ -747,6 +868,8 @@ namespace Wilkes_County_Insurance_App
                     transactionDescriptionTextBox.Text = reader["transaction_description"].ToString();
                     paymentAmountTextBox.Text = reader["payment_amount"].ToString();
                     employeeComboBox.SelectedItem = reader["employee_name"].ToString();
+                    policyFeeTextBox.Text = reader["policy_fee"].ToString();
+                    reinstatementTextBox.Text = reader["reinstatement"].ToString();
                 }
                 // closes the reader
                 reader.Close();
@@ -755,6 +878,46 @@ namespace Wilkes_County_Insurance_App
                 editMode = true;
                 editingReceiptLabel.Visible = true;
             }
+        }
+
+        private void policyFeeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (policyFeeCheckBox.Checked == true)
+            {
+                policyFeeTextBox.Enabled = true;
+            }
+            else
+            {
+                policyFeeTextBox.Enabled = false;
+                policyFeeTextBox.Text = "";
+            }
+        }
+
+        private void reinstatementCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (reinstatementCheckBox.Checked == true)
+            {
+                reinstatementTextBox.Enabled = true;
+            }
+            else
+            {
+                reinstatementTextBox.Enabled = false;
+                reinstatementTextBox.Text = "";
+            }
+        }
+
+        private void policyFeeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string amount = policyFeeTextBox.Text;
+            calcNumber(sender, amount);
+            warningCheck();
+        }
+
+        private void reinstatementTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string amount = reinstatementTextBox.Text;
+            calcNumber(sender, amount);
+            warningCheck();
         }
     }
 }

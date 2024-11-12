@@ -66,6 +66,14 @@
             pictureBox6 = new PictureBox();
             pictureBox7 = new PictureBox();
             toolTip1 = new ToolTip(components);
+            label11 = new Label();
+            label12 = new Label();
+            policyFeeTextBox = new TextBox();
+            reinstatementTextBox = new TextBox();
+            policyFeeCheckBox = new CheckBox();
+            reinstatementCheckBox = new CheckBox();
+            policyFeeWarning = new Label();
+            reinstatementWarning = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -412,12 +420,94 @@
             pictureBox7.TabStop = false;
             toolTip1.SetToolTip(pictureBox7, "Amount paid on the cash receipt.");
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(477, 322);
+            label11.Name = "label11";
+            label11.Size = new Size(86, 15);
+            label11.TabIndex = 38;
+            label11.Text = "Reinstatement:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(501, 284);
+            label12.Name = "label12";
+            label12.Size = new Size(63, 15);
+            label12.TabIndex = 39;
+            label12.Text = "Policy Fee:";
+            // 
+            // policyFeeTextBox
+            // 
+            policyFeeTextBox.Location = new Point(591, 281);
+            policyFeeTextBox.Name = "policyFeeTextBox";
+            policyFeeTextBox.Size = new Size(200, 23);
+            policyFeeTextBox.TabIndex = 40;
+            policyFeeTextBox.TextChanged += policyFeeTextBox_TextChanged;
+            // 
+            // reinstatementTextBox
+            // 
+            reinstatementTextBox.Location = new Point(591, 319);
+            reinstatementTextBox.Name = "reinstatementTextBox";
+            reinstatementTextBox.Size = new Size(200, 23);
+            reinstatementTextBox.TabIndex = 41;
+            reinstatementTextBox.TextChanged += reinstatementTextBox_TextChanged;
+            // 
+            // policyFeeCheckBox
+            // 
+            policyFeeCheckBox.AutoSize = true;
+            policyFeeCheckBox.Location = new Point(570, 285);
+            policyFeeCheckBox.Name = "policyFeeCheckBox";
+            policyFeeCheckBox.Size = new Size(15, 14);
+            policyFeeCheckBox.TabIndex = 42;
+            policyFeeCheckBox.UseVisualStyleBackColor = true;
+            policyFeeCheckBox.CheckedChanged += policyFeeCheckBox_CheckedChanged;
+            // 
+            // reinstatementCheckBox
+            // 
+            reinstatementCheckBox.AutoSize = true;
+            reinstatementCheckBox.Location = new Point(569, 323);
+            reinstatementCheckBox.Name = "reinstatementCheckBox";
+            reinstatementCheckBox.Size = new Size(15, 14);
+            reinstatementCheckBox.TabIndex = 43;
+            reinstatementCheckBox.UseVisualStyleBackColor = true;
+            reinstatementCheckBox.CheckedChanged += reinstatementCheckBox_CheckedChanged;
+            // 
+            // policyFeeWarning
+            // 
+            policyFeeWarning.AutoSize = true;
+            policyFeeWarning.ForeColor = Color.Red;
+            policyFeeWarning.Location = new Point(797, 284);
+            policyFeeWarning.Name = "policyFeeWarning";
+            policyFeeWarning.Size = new Size(84, 15);
+            policyFeeWarning.TabIndex = 44;
+            policyFeeWarning.Text = "Numbers Only";
+            // 
+            // reinstatementWarning
+            // 
+            reinstatementWarning.AutoSize = true;
+            reinstatementWarning.ForeColor = Color.Red;
+            reinstatementWarning.Location = new Point(797, 323);
+            reinstatementWarning.Name = "reinstatementWarning";
+            reinstatementWarning.Size = new Size(84, 15);
+            reinstatementWarning.TabIndex = 45;
+            reinstatementWarning.Text = "Numbers Only";
+            // 
             // PrintReceipt
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(1076, 628);
+            Controls.Add(reinstatementWarning);
+            Controls.Add(policyFeeWarning);
+            Controls.Add(reinstatementCheckBox);
+            Controls.Add(policyFeeCheckBox);
+            Controls.Add(reinstatementTextBox);
+            Controls.Add(policyFeeTextBox);
+            Controls.Add(label12);
+            Controls.Add(label11);
             Controls.Add(pictureBox7);
             Controls.Add(pictureBox6);
             Controls.Add(pictureBox5);
@@ -506,5 +596,13 @@
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;
         private ToolTip toolTip1;
+        private Label label11;
+        private Label label12;
+        private TextBox policyFeeTextBox;
+        private TextBox reinstatementTextBox;
+        private CheckBox policyFeeCheckBox;
+        private CheckBox reinstatementCheckBox;
+        private Label policyFeeWarning;
+        private Label reinstatementWarning;
     }
 }
